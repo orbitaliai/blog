@@ -1,0 +1,40 @@
+name: Sync Blog Posts & Translate
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'content/**'
+      - '!content/toc_en.md'
+      - '!content/toc_es.md'
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Sync and Translate Script
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: node scripts/sync-blog.mjs
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-translate and update TOC [skip ci]" && git push)
