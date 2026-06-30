@@ -2,136 +2,136 @@
 
 ![Presentamos Orbitali: Por qué cambiamos el pipeline de IA de voz por un único modelo en tiempo real](header.png)
 
-La mayoría de las recepcionistas de IA de voz te dejan con un incómodo silencio de "¡¿hola?!... ¿hola?" de un segundo y medio.
+La mayoría de los recepcionistas de voz de IA te dan un "¿hola? ... ¿hola?"
 
-Seguro que conoces la sensación. Llamas a una empresa, te responde una voz automatizada y expones tu solicitud. Y de repente... *nada*. Un silencio incómodo de 1,5 segundos se apodera de la línea. Te preguntas si se ha cortado la llamada. Abres la boca para decir "¿hola?" de nuevo justo cuando la IA empieza a hablar, lo que provoca una colisión conversacional robótica y frustrante.
+Conoces la sensación. Llamas a un negocio, una voz automatizada responde y expresas tu solicitud. Luego... *nada*. Un incómodo silencio de 1.5 segundos se cierne sobre la línea. Te preguntas si la llamada se cortó. Abres la boca para decir "¿hola?" de nuevo, justo cuando la IA finalmente comienza a hablar, lo que resulta en una colisión conversacional incómoda y robótica.
 
-Este retraso de 1,5 segundos no es solo molesto; es un asesino de la conversión de usuarios. En las conversaciones entre humanos, la ventana de respuesta natural es extremadamente estrecha: entre 200 ms y 400 ms. En cuanto un agente tarda más de 600 ms en responder, el cerebro humano detecta una brecha incómoda. Y si el retraso supera los 900 ms, la fluidez de la conversación se rompe por completo.
+Este retraso de 1.5 segundos no solo es molesto; es un asesino de conversiones. En las conversaciones entre humanos, la ventana de respuesta natural es ajustada: entre 200 ms y 400 ms. Una vez que un agente tarda más de 600 ms en responder, el cerebro humano registra un vacío desconcertante. Cuando se extiende más allá de 900 ms, la conversación se rompe por completo.
 
-Hoy lanzamos la beta pública para desarrolladores de **Orbitali** para solucionar este problema de raíz.
+Hoy, lanzamos **Orbitali en beta pública para desarrolladores** para resolver este problema de forma permanente.
 
-Orbitali es una capa de infraestructura de agentes de IA de voz en tiempo real que permite a los desarrolladores compilar, desplegar, operar y observar agentes de voz conversacionales que alcanzan tiempos de respuesta humanos nativos de entre **300 ms y 500 ms**. Y lo hemos conseguido no retocando código antiguo, sino eliminando por completo la arquitectura tradicional de múltiples proveedores que domina la industria.
+Orbitali es una capa de infraestructura de agente de voz de IA en tiempo real que permite a los desarrolladores construir, implementar, operar y observar agentes de voz conversacionales que alcanzan tiempos de respuesta humanos naturales de **300–500 ms**. Logramos esto no ajustando código antiguo, sino desechando por completo la arquitectura tradicional de múltiples proveedores que domina la industria.
 
-A continuación, os mostramos con total transparencia cómo funciona nuestra tecnología, por qué el pipeline tradicional de IA de voz está técnicamente obsoleto para el tiempo real y las decisiones de ingeniería que tomamos para lograr una conversación humana a escala.
-
----
-
-## La arquitectura defectuosa del pipeline de IA de voz tradicional
-
-Para entender por qué los bots de voz actuales parecen sistemas telefónicos lentos y pesados, hay que analizar su infraestructura subyacente. Casi todas las plataformas de orquestación de voz del mercado actual actúan como un mero "conector de tuberías" (*pipeline wrangler*). Encadenan tres sistemas completamente independientes de tres proveedores distintos para procesar cada turno de la conversación:
-
-$$	ext{Speech-to-Text (STT)} \longrightarrow 	ext{Large Language Model (LLM)} \longrightarrow 	ext{Text-to-Speech (TTS)}$$
-
-Cada vez que un usuario habla por teléfono o a través del navegador, esta arquitectura tradicional ejecuta los siguientes saltos de red:
-
-1. **La fase de transcripción (STT):** El flujo de audio entrante se captura, se empaqueta en fragmentos y se envía a una API externa de reconocimiento de voz (como Deepgram o AssemblyAI). El modelo debe esperar a que se pronuncie una frase o una oración completa para devolver una cadena de texto limpia.
-2. **La fase de razonamiento (LLM):** El texto transcrito se envía por la red al proveedor del modelo de lenguaje (como OpenAI o Anthropic). El LLM procesa el texto, genera la respuesta y comienza a transmitir tokens de texto de vuelta.
-3. **La fase de síntesis (TTS):** Los tokens de texto generados se introducen en un motor de texto a voz (como ElevenLabs o Cartesia) para convertirse de nuevo en ondas de audio.
-4. **La fase de entrega:** El flujo de audio resultante se empaqueta finalmente y se redirige a la pasarela de telefonía del operador para que llegue al oído del usuario.
-
-### El impuesto de la latencia: Por qué fallan los pipelines
-Aunque optimices cada fase de este pipeline, estás luchando contra las leyes de las redes y de la computación. Cada transferencia de datos entre proveedores de API distintos introduce **latencia de red interservicio**.
-
-Además, pagas una penalización por el retraso de procesamiento acumulado. Si el STT tarda 200 ms, el LLM tarda 400 ms en generar el contexto de la respuesta y el TTS requiere otros 300 ms para sintetizar los matices de la voz, la latencia base ya es de 900 ms. Si sumamos el enrutamiento de paquetes de red a través de centros de datos de distintas nubes, entramos de lleno en el territorio del incómodo "silencio robótico" de 1,5 segundos.
-
-Ningún nivel de astucia en ingeniería puede eludir esta realidad estructural. Cuando diseñas una arquitectura basada en tres recargos comerciales acumulados y tres relaciones de API independientes, estás optimizando la variedad de componentes a expensas directas de la experiencia del usuario final.
+Aquí hay una mirada honesta detrás de escena sobre por qué el pipeline tradicional de IA de voz está fundamentalmente roto para aplicaciones en tiempo real, cómo construimos una mejor capa de ejecución y los deliberados compromisos de ingeniería que hicimos para lograr una verdadera conversación a gran escala.
 
 ---
 
-## El replanteamiento de la infraestructura: voz a voz en una sola pasada
+## La Arquitectura Defectuosa del Pipeline Tradicional de IA de Voz
 
-En Orbitali, desarrollamos nuestro motor de ejecución con una única premisa fundamental: **la latencia es la funcionalidad clave**. Si un recepcionista de IA de voz no responde lo suficientemente rápido como para parecer humano, nada de lo que haga importa.
+Para entender por qué tu bot de voz actual se siente como un árbol telefónico lento, debes mirar la infraestructura subyacente. Casi todas las principales plataformas de orquestación de voz en el mercado hoy actúan como "gestores de pipeline". Encadenan tres sistemas completamente separados de tres proveedores diferentes para lograr un único turno de conversación:
 
-Para alcanzar nuestros objetivos de tiempo de respuesta de 300–500 ms, eliminamos por completo el pipeline tradicional multiproveedor. Orbitali opera sobre una arquitectura de modelo único, en tiempo real y **directamente de voz a voz**.
+$$	ext{Reconocimiento de voz (STT)} \longrightarrow 	ext{Modelo de lenguaje grande (LLM)} \longrightarrow 	ext{Síntesis de voz (TTS)}$$
+
+Cada vez que un usuario habla por teléfono o navegador, la arquitectura tradicional ejecuta los siguientes saltos de red:
+
+1. **La etapa de transcripción (STT):** La transmisión de audio entrante se captura, se empaqueta y se envía a una API de reconocimiento de voz de terceros (como Deepgram o AssemblyAI). El modelo debe esperar hasta que se hable una frase suficiente o una oración completa para generar una cadena de texto limpia.
+2. **La etapa de razonamiento (LLM):** La transcripción de texto se envía a través de la red a un proveedor de modelos de lenguaje (como OpenAI o Anthropic). El LLM procesa el texto, calcula la respuesta y comienza a transmitir tokens de texto de vuelta.
+3. **La etapa de síntesis (TTS):** Los tokens de texto generados se alimentan a un motor de texto a voz (como ElevenLabs o Cartesia) para ser convertidos de nuevo en formas de onda de audio.
+4. **La etapa de entrega:** La transmisión de audio compilada se empaqueta finalmente y se envía de vuelta a la puerta de enlace telefónica del operador para llegar al oído del usuario.
+
+### El Impuesto de Latencia: Por qué los Pipelines Fallan
+Incluso si optimizas cada una de estas etapas del pipeline, estás luchando contra las leyes básicas de la red y la computación. Cada transferencia entre distintos proveedores de API introduce **latencia de red entre servicios**.
+
+Además, pagas un retraso acumulativo en el procesamiento. Si tu STT tarda 200 ms, tu LLM tarda 400 ms en generar el contexto de respuesta principal, y tu TTS tarda otros 300 ms en sintetizar el matiz emocional del audio, tu latencia base ya está en 900 ms. Agrega el enrutamiento de paquetes de red a través de centros de datos en la nube dispares, y aterrizas en el incómodo territorio de "silencio robótico" de 1.5 segundos.
+
+Ninguna cantidad de ingenio puede eludir esta realidad estructural. Cuando construyes una arquitectura basada en tres marcas apiladas y tres relaciones de API separadas, estás optimizando la variedad de componentes a expensas directas de la experiencia del usuario final.
+
+---
+
+## La Reconsideración de la Infraestructura: Reconocimiento de voz a voz en un solo paso
+
+En Orbitali, construimos nuestra ejecución con una única tesis guía: **la latencia es la característica**. Si un recepcionista de voz de IA no puede responder lo suficientemente rápido como para sentirse humano, nada de lo que haga importa.
+
+Para alcanzar nuestros tiempos de respuesta objetivo de 300–500 ms, colapsamos por completo el pipeline tradicional de múltiples proveedores. Orbitali opera en una única arquitectura de modelo **de voz a voz** en tiempo real unificada.
 
 ```
-[Flujo de audio del usuario] ──(Conexión de red directa)──> [Servicio de agente Go de Orbitali]
-                                                                     │
-                                                       (Paso único del modelo nativo)
-                                                                     │
-                                                                     ▼
-[Flujo del operador] <───(Respuesta en 300-500ms)─────────── [Gemini Live vía Vertex AI]
+[Transmisión de audio del usuario] ──(Conexión de red directa)──> [Servicio de agente Orbitali Go]
+                                                               │
+                                                 (Paso de modelo nativo único)
+                                                               │
+                                                               ▼
+[Transmisión del operador] <───(Respuesta de 300-500 ms)─────────── [Gemini Live a través de Vertex AI]
 ```
 
-Bajo el capó, aprovechamos el potencial de **Gemini Live a través de Google Cloud Vertex AI**.
+Bajo el capó, aprovechamos **Gemini Live a través de Google Cloud Vertex AI**.
 
-En lugar de procesar la transcripción de audio, el razonamiento textual y la síntesis de voz como tareas secuenciales, Gemini Live gestiona las tres de forma nativa dentro de una única capa de modelo en una sola pasada. No existe un paso de traducción de audio a texto que destruya el tono o la cadencia, ni una etapa de síntesis de texto a voz que añada latencia. Los bytes de audio bruto fluyen directamente hacia el modelo, y los bytes de audio salientes se transmiten de inmediato, comenzando antes incluso de que la respuesta completa haya terminado de calcularse.
+En lugar de tratar la transcripción de audio, el razonamiento textual y la síntesis de audio como tareas secuenciales, Gemini Live maneja las tres de manera nativa dentro de una única capa de modelo en un solo paso. No hay un paso de traducción de audio a texto que pierda tono o cadencia, y no hay un paso de síntesis de texto a voz que añada latencia. Los bytes de audio en bruto fluyen directamente al modelo, y los bytes de audio en streaming salen directamente, comenzando antes de que se complete el cálculo de la respuesta.
 
-Al ejecutar nuestra infraestructura sin estado basada en Go (`orbitali-agent`) en regiones con alta compatibilidad de residencia de datos (como `europe-west4`), reducimos los saltos de red al milisegundo. Evitamos por completo el caos de las redes interservicio. Orbitali actúa estrictamente como un orquestador en tiempo real altamente optimizado, alimentando el contexto del modelo único y ejecutando la lógica de negocio del desarrollador de forma fluida.
-
----
-
-## El compromiso intencionado: rendimiento frente a personalización
-
-Sabemos perfectamente lo que preguntarán algunos desarrolladores de grandes empresas: *"¿Puedo sustituir el modelo subyacente por mi propio LLM de código abierto ajustado? ¿Puedo integrar un proveedor de voz personalizado que me guste?"*
-
-Nuestra respuesta es tajante: **No.** Y se trata de una restricción explícita e intencionada, no de un descuido.
-
-Hemos renunciado deliberadamente al intercambio de proveedores a la carta a cambio de conseguir un agente que realmente se sienta como un ser humano real al otro lado del teléfono. Las plataformas que permiten una personalización absoluta te obligan a gestionar una complejidad de integración inmensa y a aceptar la degradación del rendimiento propia del pipeline multiproveedor.
-
-Al estandarizar nuestro servicio en una única arquitectura de modelo de alto rendimiento, aportamos ventajas fundamentales a los equipos de ingeniería:
-
-* **Simplicidad operativa:** No necesitas lidiar con tres claves de suscripción diferentes, monitorizar el tiempo de actividad de múltiples plataformas de infraestructura, ni preocuparte de si una actualización en la API de síntesis de voz estropeará el formato de tus instrucciones (*prompts*). Una única plataforma se encarga de todo.
-* **Transmisión bidireccional real e interrupción inmediata (*barge-in*):** Dado que el modelo de voz es nativamente consciente de los parámetros de audio entrantes, gestiona las interrupciones naturales del usuario al instante. Si el agente de IA está hablando y el interlocutor le interrumpe diciendo *"Espera, déjame cambiar esa hora"*, Orbitali detecta el flujo de audio entrante, corta inmediatamente la generación de voz saliente y se vuelve a concentrar en las palabras del cliente. Es un fiel reflejo del comportamiento telefónico humano.
-* **Precios transparentes sin recargos ocultos:** Como no tenemos que repercutir tres márgenes comerciales acumulados, ofrecemos una tarifa de ejecución plana y transparente de **0,10 €/minuto** (medida en intervalos precisos de 10 segundos) en todos nuestros planes, que se descuenta de tu asignación mensual base.
+Al ejecutar nuestra infraestructura sin estado basada en Go (`orbitali-agent`) en regiones con un alto soporte de residencia (como `europe-west4`), minimizamos los saltos de red a milisegundos. Eludimos por completo el caos de red entre servicios. Orbitali actúa estrictamente como un orquestador en tiempo real altamente optimizado, alimentando el contexto del modelo único y ejecutando la lógica empresarial del desarrollador sin problemas.
 
 ---
 
-## Separación estricta de responsabilidades: tú controlas la lógica, nosotros ejecutamos el agente
+## El Compromiso Intencional: Rendimiento sobre Personalización
 
-A pesar de que restringimos la configuración del modelo para preservar la latencia, ofrecemos flexibilidad absoluta en lo que respecta a los datos de tu aplicación. Orbitali mantiene una estricta separación de responsabilidades: los registros de tus clientes, las reglas personalizadas y los datos de tu infraestructura permanecen íntegramente en tu propio servidor.
+Sabemos lo que algunos desarrolladores empresariales preguntarán: *"¿Puedo intercambiar el modelo subyacente por mi propio LLM de código abierto ajustado? ¿Puedo conectar un proveedor de voz personalizado que me guste?"*
+
+Nuestra respuesta es directa: **No.** Y esa es una restricción explícita e intencionada, no un descuido.
+
+Intercambiamos deliberadamente el cambio de proveedores a la carta por un agente que realmente se siente como un humano vivo al otro lado de la línea. Las plataformas que permiten una personalización total te obligan a gestionar una inmensa complejidad de integración y aceptar la degradación del rendimiento del pipeline de múltiples proveedores.
+
+Al estandarizar en una única arquitectura de modelo altamente eficiente, ofrecemos varias ventajas masivas a los equipos de ingeniería:
+
+* **Simplicidad Operativa:** No necesitas manejar tres claves de suscripción separadas, monitorear el tiempo de actividad en múltiples plataformas de infraestructura, o preocuparte por una actualización de API de síntesis de voz que rompa tu formato de solicitud. Una plataforma lo maneja todo.
+* **Transmisión Bidireccional Verdadera y Barge-In:** Debido a que el modelo de voz es nativamente consciente de los parámetros de audio entrantes, maneja las interrupciones naturales de los usuarios al instante. Si el agente de IA está hablando y un llamador interrumpe con *"Espera, déjame cambiar esa hora,"* Orbitali detecta la transmisión de audio entrante, corta inmediatamente la generación de habla saliente y se vuelve a enfocar en las palabras del cliente. Refleja el comportamiento telefónico humano natural.
+* **Precios Transparentes Sin Márgenes:** Debido a que no tenemos tres márgenes apilados que pasar, ofrecemos una tarifa de ejecución plana y transparente de **€0.10/minuto** (medido en incrementos precisos de 10 segundos) en todos nuestros planes, extrayendo de tu asignación mensual base.
+
+---
+
+## Separación Clara de Preocupaciones: Tú Posees la Lógica, Nosotros Ejecutamos el Agente
+
+Mientras restringimos la configuración del modelo para preservar la latencia, proporcionamos flexibilidad absoluta en cuanto a tus datos de aplicación. Orbitali mantiene una estricta separación de preocupaciones: tus registros de clientes, reglas personalizadas y datos de backend permanecen completamente dentro de tu infraestructura.
 
 ```
 ┌─────────────────────────────────┐                 ┌───────────────────────────┐
-│     ENTORNO DE ORBITALI         │                 │   BACKEND DEL DESARROLLADOR│
-│  - Transmisión de voz de baja   │  agent:tool-call │  - CRM de clientes / APIs │
-│    latencia                     │ ────────────────> │  - Reservas y             │
-│  - Arquitectura Gemini Live     │ <──────────────── │    disponibilidad         │
-│  - Motor RAG pgvector nativo    │   Respuesta JSON  │  - Lógica propietaria     │
+│        RUNTIME DE ORBITALI      │                 │     BACKEND DEL DESARROLLADOR     │
+│  - Transmisión de voz de baja latencia  │  agent:tool-call │  - CRMs / APIs de clientes   │
+│  - Arquitectura Gemini Live    │ ────────────────> │  - Reservas / Disponibilidad │
+│  - Motor RAG nativo pgvector   │ <──────────────── │  - Lógica propietaria      │
+│                                 │   Respuesta JSON   │                           │
 └─────────────────────────────────┘                 └───────────────────────────┘
 ```
 
-Cuando creas un agente en Orbitali, puedes aprovechar primitivas de desarrollo avanzadas mediante webhooks:
+Cuando construyes un agente en Orbitali, puedes aprovechar primitivas avanzadas para desarrolladores a través de webhooks:
 
-### 1. Instrucciones dinámicas (*Dynamic Prompts* - Antes de la llamada)
-Las instrucciones estáticas limitan la utilidad de una IA. Con Orbitali, puedes configurar tu agente con un webhook de `Server URL`. En el mismo milisegundo en que una llamada entrante llega a tu línea telefónica, Orbitali envía una petición a tu servidor backend con un evento `agent:assistant-request` que contiene los metadatos del llamante. Tu backend puede consultar instantáneamente ese número en tu CRM y devolver una instrucción o saludo completamente dinámico y personalizado:
+### 1. Prompts Dinámicos (Antes de la Llamada)
+Las instrucciones estáticas pueden limitar la utilidad de una IA. Con Orbitali, puedes configurar tu agente con un webhook de `URL del servidor`. En el milisegundo en que una llamada entrante llega a tu línea telefónica, Orbitali envía un ping a tu servidor backend con una carga útil de `agent:assistant-request` que contiene los metadatos del llamador. Tu backend puede buscar instantáneamente ese número en tu CRM y devolver un saludo o cadena de instrucción completamente dinámica y personalizada:
 
-> *"Hola Alejandro, bienvenido de nuevo a tu nivel de cuenta Platinum. Veo que tu vuelo se ha retrasado..."*
+> *"Hola Alex, bienvenido de nuevo a tu nivel de cuenta Platinum. Veo que tu vuelo se retrasó..."*
 
-### 2. Herramientas de API en directo (A mitad de la conversación)
-Los agentes de voz deben ejecutar tareas, no solo hablar. Orbitali admite herramientas personalizadas para desarrolladores (*Developer Tools*) definidas mediante parámetros sencillos de JSON Schema. Cuando la conversación activa una acción —como reservar una cita en una clínica o comprobar el estado de un pedido—, Orbitali pausa la generación de audio y envía un evento de webhook `agent:tool-call` a tu servidor. Tu servidor ejecuta la lógica de negocio local, devuelve una respuesta JSON estándar y el agente continúa hablando con total fluidez.
+### 2. Herramientas API en Vivo (Durante la Conversación)
+Los agentes de voz deben ejecutar tareas, no solo conversar. Orbitali admite herramientas personalizadas para desarrolladores definidas a través de simples parámetros de esquema JSON. Cuando la conversación activa una acción—como reservar una cita en una clínica o verificar el estado de un pedido—Orbitali pausa la generación de audio y publica un evento webhook de `agent:tool-call` en tu servidor. Tu servidor ejecuta la lógica empresarial local, devuelve una carga útil JSON estándar, y el agente continúa hablando sin problemas.
 
-### 3. RAG nativo sin configuración
-Si manejas extensas fichas de producto, políticas internas complejas o secciones amplias de preguntas frecuentes, no necesitas saturar tus instrucciones del sistema ni construir una API de búsqueda externa que ralentice el proceso. Puedes subir documentos en formato Markdown o PDF directamente al panel de control de Orbitali. Nuestra plataforma fragmenta y genera los vectores de tus datos automáticamente en una base de datos vectorial nativa (`pgvector`). Cuando el agente necesita información, ejecuta internamente una herramienta de búsqueda de similitud semántica optimizada (`search_knowledge`), recuperando respuestas hiperrelevantes con cero latencia añadida.
-
----
-
-## Diseñado para desarrolladores: Trae tu propio operador (*Bring Your Own Carrier - BYOC*)
-
-Orbitali es una infraestructura pensada para desarrolladores, equipos de producto y agencias de automatización que buscan desplegar bots de voz de nivel de producción para flujos de trabajo entrantes (*inbound*), como recepción, triaje de atención al cliente o líneas de reservas.
-
-Debido a que nos enfocamos de manera exclusiva en construir la mejor capa de ejecución en tiempo real, **no somos un operador telefónico**. No vendemos números de teléfono ni inflamos los costes de telefonía un 300%.
-
-Operamos bajo un estricto modelo de **Trae tu propio operador (BYOC)**. Conectas tus cuentas existentes de Twilio o Telnyx directamente a Orbitali mediante OAuth estándar o webhooks. Mantienes tus tarifas mayoristas con el operador, proteges el cumplimiento de la privacidad de tus datos y conservas la propiedad total sobre tus números de teléfono. Pagas directamente a tu operador por el enrutamiento de la línea y a Orbitali únicamente por los minutos de ejecución de la IA.
-
-*Nota: Orbitali está diseñado específicamente y optimizado para flujos de trabajo de atención de llamadas entrantes. No admitimos campañas de llamadas salientes masivas (robocalling), marcadores automáticos de telemarketing ni campañas de spam. Esta decisión de diseño mantiene nuestra infraestructura libre de tráfico malicioso y nos permite concentrarnos en dar un servicio excepcional a equipos de desarrollo legítimos.*
+### 3. RAG Nativo Sin Configuración
+Si tienes hojas de productos masivas, políticas internas complejas o preguntas frecuentes extensas, no necesitas introducirlas en un prompt del sistema o construir una API de búsqueda externa lenta. Puedes subir documentos en Markdown o PDF directamente al panel de control de Orbitali. Nuestra plataforma automáticamente divide y embebe tus datos en una base de datos vectorial nativa (`pgvector`). Cuando el agente necesita información, ejecuta una herramienta de búsqueda de similitud semántica optimizada (`search_knowledge`) internamente, trayendo respuestas hiper-relevantes sin latencia añadida.
 
 ---
 
-## Únete hoy mismo a la beta pública para desarrolladores
+## Construido para Constructores: Trae Tu Propio Operador (BYOC)
 
-La era de los silencios incómodos en la IA de voz ha llegado a su fin. Al abandonar el defectuoso pipeline multiproveedor y diseñar una plataforma en torno a un único modelo de voz a voz en tiempo real, hemos desbloqueado una capacidad de respuesta verdaderamente humana para las aplicaciones de voz.
+Orbitali es infraestructura para desarrolladores, equipos de producto y agencias de automatización que desean implementar bots de voz de grado de producción para flujos de trabajo entrantes como recepción en el mostrador, enrutamiento de intake, triaje de servicio al cliente o líneas de reserva.
 
-Nuestra beta pública para desarrolladores ya está oficialmente disponible. Cada cuenta nueva recibe **5 minutos de prueba gratuitos** (válidos durante 7 días, sin necesidad de introducir tarjeta de crédito) para comprobar la mejora en la latencia de primera mano. A partir de ahí, puedes escalar a producción de forma fluida a través de nuestros flexibles niveles de suscripción:
+Debido a que nos enfocamos exclusivamente en construir la mejor capa de ejecución en tiempo real, **no somos un operador telefónico**. No vendemos números de teléfono, y no aumentamos tus costos de telefonía en un 300%.
 
-| Plan | Precio base / mes | Minutos incluidos | Tarifa de exceso | Ideal para |
+Operamos bajo un estricto marco de **Trae Tu Propio Operador (BYOC)**. Vinculas tus propias cuentas existentes de Twilio o Telnyx directamente a Orbitali a través de OAuth estándar o webhooks. Mantienes tus precios de operador al por mayor, proteges tu postura de cumplimiento de datos y mantienes la propiedad total sobre tus números de teléfono. Pagas directamente a tu operador por el enrutamiento de líneas, y pagas a Orbitali únicamente por los minutos de ejecución de IA.
+
+*Nota: Orbitali está diseñado específicamente y altamente optimizado para flujos de trabajo de manejo de llamadas entrantes. No apoyamos llamadas robóticas masivas salientes, marcadores automáticos de telemarketing o campañas de spam. Esta elección de diseño mantiene nuestra infraestructura libre de tráfico de spam y nos permite enfocarnos en proporcionar un servicio de primer nivel a equipos de desarrollo legítimos.*
+
+---
+
+## Únete a la Beta Pública para Desarrolladores Hoy
+
+La era del incómodo silencio de IA de voz ha terminado. Al abandonar el roto pipeline de múltiples proveedores y diseñar una plataforma en torno a un único modelo unificado de voz a voz en tiempo real, hemos desbloqueado una capacidad de respuesta de calidad humana para aplicaciones de voz.
+
+Nuestra beta pública para desarrolladores está oficialmente activa. Cada nueva cuenta recibe **5 minutos de prueba gratuitos** (válidos por 7 días, sin necesidad de tarjeta de crédito) para probar las mejoras de latencia de primera mano. A partir de ahí, puedes escalar sin problemas a producción a través de nuestros niveles de suscripción flexibles:
+
+| Plan | Precio Base / mes | Minutos Incluidos | Tasa de Exceso | Mejor Para |
 | :--- | :--- | :--- | :--- | :--- |
-| **Launch** | 49 € | 300 | 0,10 € / min | Validar los primeros proyectos mínimos viables (MVP) |
-| **Studio** | 199 € | 1.500 | 0,10 € / min | Escalado a producción y análisis detallados |
-| **Agency** | 499 € | 5.000 | 0,10 € / min | Agentes activos y líneas concurrentes ilimitadas |
+| **Lanzamiento** | €49 | 300 | €0.10 / min | Validar MVPs iniciales de clientes |
+| **Estudio** | €199 | 1,500 | €0.10 / min | Escalado de producción e informes profundos |
+| **Agencia** | €499 | 5,000 | €0.10 / min | Agentes activos ilimitados y líneas concurrentes |
 
-¿Todo listo para construir un agente de voz que realmente suene humano?
+¿Listo para construir un agente de voz que realmente suene humano?
 
-* **Empieza de inmediato:** Regístrate y accede al panel de control en [app.orbitali.ai](https://app.orbitali.ai).
-* **Revisa la arquitectura:** Explora a fondo los webhooks, las instrucciones dinámicas y los esquemas de herramientas en nuestra documentación completa para desarrolladores.
-* **Contacta con los fundadores:** ¿Tienes requisitos de escala altamente personalizados o necesitas un despliegue para tu agencia? Reserva una sesión de consultoría técnica directa a través del enlace de calendario de nuestro panel.
+* **Comienza Inmediatamente:** Regístrate y accede al panel en [app.orbitali.ai](https://app.orbitali.ai).
+* **Revisa la Arquitectura:** Profundiza en webhooks, prompts dinámicos y esquemas de herramientas a través de nuestra completa documentación para desarrolladores.
+* **Conéctate con los Fundadores:** ¿Tienes un requisito de escala altamente personalizado o implementación de agencia? Reserva una sesión de descubrimiento de ingeniería directa a través del enlace de calendario de nuestro panel.
