@@ -45,19 +45,19 @@ At Orbitali, we built our runtime with a single guiding thesis: **latency is the
 To hit our target response times of 300–500ms, we collapsed the traditional multi-vendor pipeline entirely. Orbitali operates on a single, unified, real-time **speech-to-speech** model architecture. 
 
 ```
-[User Audio Stream] ──(Direct Network Connection)──> [Orbitali Go Agent Service]
+[User Audio Stream] ──(Direct Network Connection)──> [Orbitali Orchestration Service]
                                                                │
                                                  (Single Native Model Pass)
                                                                │
                                                                ▼
-[Carrier Stream] <───(300-500ms Response)─────────── [Gemini Live via Vertex AI]
+[Carrier Stream] <───(300-500ms Response)─────────── [Real-Time Speech-to-Speech Model]
 ```
 
-Under the hood, we leverage **Gemini Live via Google Cloud Vertex AI**. 
+Under the hood, we leverage a state-of-the-art, unified real-time speech-to-speech model. 
 
-Instead of treating audio transcription, textual reasoning, and audio synthesis as sequential tasks, Gemini Live handles all three natively inside a single model layer in one pass. There is no audio-to-text translation step that loses tone or cadence, and no text-to-speech synthesis step that adds latency. The raw audio bytes stream directly into the model, and streaming audio bytes come directly out, starting before the complete response is even finished computing.
+Instead of treating audio transcription, textual reasoning, and audio synthesis as sequential tasks, our voice model handles all three natively inside a single model layer in one pass. There is no audio-to-text translation step that loses tone or cadence, and no text-to-speech synthesis step that adds latency. The raw audio bytes stream directly into the model, and streaming audio bytes come directly out, starting before the complete response is even finished computing.
 
-By running our stateless Go-based infrastructure (`orbitali-agent`) in highly residency-supported regions (such as `europe-west4`), we minimize network hops to the millisecond. We completely bypass the inter-service network chaos. Orbitali acts strictly as a highly optimized real-time orchestrator, feeding the single model context and executing developer business logic seamlessly.
+By running our stateless orchestration infrastructure in optimized regions close to major carrier networks, we minimize network hops to the millisecond. We completely bypass the inter-service network chaos. Orbitali acts strictly as a highly optimized real-time orchestrator, feeding the speech model context and executing developer business logic seamlessly.
 
 ---
 
@@ -85,8 +85,8 @@ While we restrict model configuration to preserve latency, we provide absolute f
 ┌─────────────────────────────────┐                 ┌───────────────────────────┐
 │        ORBITALI RUNTIME         │                 │     DEVELOPER BACKEND     │
 │  - Low-Latency Voice Streaming  │  agent:tool-call │  - Customer CRMs / APIs   │
-│  - Gemini Live Architecture    │ ────────────────> │  - Booking / Availability │
-│  - Native pgvector RAG Engine   │ <──────────────── │  - Proprietary Logic      │
+│  - Speech-to-Speech Model       │ ────────────────> │  - Booking / Availability │
+│  - Native Vector RAG Engine     │ <──────────────── │  - Proprietary Logic      │
 │                                 │   JSON Response   │                           │
 └─────────────────────────────────┘                 └───────────────────────────┘
 ```
@@ -102,7 +102,7 @@ Static instructions can limit an AI's utility. With Orbitali, you can configure 
 Voice agents should execute tasks, not just converse. Orbitali supports custom Developer Tools defined via simple JSON Schema parameters. When the conversation triggers an action—like booking a clinic appointment or checking an order status—Orbitali pauses audio generation and posts an `agent:tool-call` webhook event to your server. Your server runs the local business logic, returns a standard JSON payload, and the agent continues speaking smoothly.
 
 ### 3. Native Zero-Config RAG
-If you have massive product sheets, complex internal policies, or extensive FAQs, you don't need to jam them into a system prompt or build a slow external search API. You can upload Markdown or PDF documents directly to the Orbitali dashboard. Our platform automatically chunks and embeds your data into a native vector database (`pgvector`). When the agent needs information, it runs an optimized semantic similarity search tool (`search_knowledge`) internally, bringing back hyper-relevant answers with zero added latency.
+If you have massive product sheets, complex internal policies, or extensive FAQs, you don't need to jam them into a system prompt or build a slow external search API. You can upload Markdown or PDF documents directly to the Orbitali dashboard. Our platform automatically chunks and embeds your data into a high-performance vector database. When the agent needs information, it runs an optimized semantic similarity search tool (`search_knowledge`) internally, bringing back hyper-relevant answers with zero added latency.
 
 ---
 

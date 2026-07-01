@@ -45,19 +45,19 @@ En Orbitali, construimos nuestra ejecución con una única tesis guía: **la lat
 Para alcanzar nuestros tiempos de respuesta objetivo de 300–500 ms, colapsamos por completo el pipeline tradicional de múltiples proveedores. Orbitali opera en una única arquitectura de modelo **de voz a voz** en tiempo real unificada.
 
 ```
-[Transmisión de audio del usuario] ──(Conexión de red directa)──> [Servicio de agente Orbitali Go]
+[Transmisión de audio del usuario] ──(Conexión de red directa)──> [Servicio de orquestación de Orbitali]
                                                                │
                                                  (Paso de modelo nativo único)
                                                                │
                                                                ▼
-[Transmisión del operador] <───(Respuesta de 300-500 ms)─────────── [Gemini Live a través de Vertex AI]
+[Transmisión del operador] <───(Respuesta de 300-500 ms)─────────── [Modelo de voz a voz en tiempo real]
 ```
 
-Bajo el capó, aprovechamos **Gemini Live a través de Google Cloud Vertex AI**.
+Bajo el capó, aprovechamos un modelo unificado de voz a voz en tiempo real de última generación.
 
-En lugar de tratar la transcripción de audio, el razonamiento textual y la síntesis de audio como tareas secuenciales, Gemini Live maneja las tres de manera nativa dentro de una única capa de modelo en un solo paso. No hay un paso de traducción de audio a texto que pierda tono o cadencia, y no hay un paso de síntesis de texto a voz que añada latencia. Los bytes de audio en bruto fluyen directamente al modelo, y los bytes de audio en streaming salen directamente, comenzando antes de que se complete el cálculo de la respuesta.
+En lugar de tratar la transcripción de audio, el razonamiento textual y la síntesis de audio como tareas secuenciales, nuestro modelo de voz maneja las tres de manera nativa dentro de una única capa de modelo en un solo paso. No hay un paso de traducción de audio a texto que pierda tono o cadencia, y no hay un paso de síntesis de texto a voz que añada latencia. Los bytes de audio en bruto fluyen directamente al modelo, y los bytes de audio en streaming salen directamente, comenzando antes de que se complete el cálculo de la respuesta.
 
-Al ejecutar nuestra infraestructura sin estado basada en Go (`orbitali-agent`) en regiones con un alto soporte de residencia (como `europe-west4`), minimizamos los saltos de red a milisegundos. Eludimos por completo el caos de red entre servicios. Orbitali actúa estrictamente como un orquestador en tiempo real altamente optimizado, alimentando el contexto del modelo único y ejecutando la lógica empresarial del desarrollador sin problemas.
+Al ejecutar nuestra infraestructura de orquestación sin estado en regiones optimizadas cercanas a las principales redes de operadores, minimizamos los saltos de red a milisegundos. Eludimos por completo el caos de red entre servicios. Orbitali actúa estrictamente como un orquestador en tiempo real altamente optimizado, alimentando el contexto del modelo de voz y ejecutando la lógica empresarial del desarrollador sin problemas.
 
 ---
 
@@ -85,8 +85,8 @@ Mientras restringimos la configuración del modelo para preservar la latencia, p
 ┌─────────────────────────────────┐                 ┌───────────────────────────┐
 │        RUNTIME DE ORBITALI      │                 │     BACKEND DEL DESARROLLADOR     │
 │  - Transmisión de voz de baja latencia  │  agent:tool-call │  - CRMs / APIs de clientes   │
-│  - Arquitectura Gemini Live    │ ────────────────> │  - Reservas / Disponibilidad │
-│  - Motor RAG nativo pgvector   │ <──────────────── │  - Lógica propietaria      │
+│  - Modelo de voz a voz         │ ────────────────> │  - Reservas / Disponibilidad │
+│  - Motor RAG vectorial nativo  │ <──────────────── │  - Lógica propietaria      │
 │                                 │   Respuesta JSON   │                           │
 └─────────────────────────────────┘                 └───────────────────────────┘
 ```
@@ -102,7 +102,7 @@ Las instrucciones estáticas pueden limitar la utilidad de una IA. Con Orbitali,
 Los agentes de voz deben ejecutar tareas, no solo conversar. Orbitali admite herramientas personalizadas para desarrolladores definidas a través de simples parámetros de esquema JSON. Cuando la conversación activa una acción—como reservar una cita en una clínica o verificar el estado de un pedido—Orbitali pausa la generación de audio y publica un evento webhook de `agent:tool-call` en tu servidor. Tu servidor ejecuta la lógica empresarial local, devuelve una carga útil JSON estándar, y el agente continúa hablando sin problemas.
 
 ### 3. RAG Nativo Sin Configuración
-Si tienes hojas de productos masivas, políticas internas complejas o preguntas frecuentes extensas, no necesitas introducirlas en un prompt del sistema o construir una API de búsqueda externa lenta. Puedes subir documentos en Markdown o PDF directamente al panel de control de Orbitali. Nuestra plataforma automáticamente divide y embebe tus datos en una base de datos vectorial nativa (`pgvector`). Cuando el agente necesita información, ejecuta una herramienta de búsqueda de similitud semántica optimizada (`search_knowledge`) internamente, trayendo respuestas hiper-relevantes sin latencia añadida.
+Si tienes hojas de productos masivas, políticas internas complejas o preguntas frecuentes extensas, no necesitas introducirlas en un prompt del sistema o construir una API de búsqueda externa lenta. Puedes subir documentos en Markdown o PDF directamente al panel de control de Orbitali. Nuestra plataforma automáticamente divide y embebe tus datos en una base de datos vectorial nativa de alto rendimiento. Cuando el agente necesita información, ejecuta una herramienta de búsqueda de similitud semántica optimizada (`search_knowledge`) internamente, trayendo respuestas hiper-relevantes sin latencia añadida.
 
 ---
 
