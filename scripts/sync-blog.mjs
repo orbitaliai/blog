@@ -39,7 +39,15 @@ async function translateText(text) {
       messages: [
         {
           role: 'system',
-          content: 'You are a professional translator. Translate the following markdown blog post from English to Spanish. Retain all markdown formatting, headings, code blocks, math equations ($$...$$), images, spacing, and metadata exactly as they are. Translate ONLY the text content. Do not add any conversational text or markdown code fence wrappers (do not wrap the output in ```markdown).'
+          content: 'You are a professional translator specializing in software engineering and AI documentation. Translate the following markdown blog post from English to Spanish. \n\n' +
+            'Follow these strict guidelines for technical terms and style to sound natural to Spanish-speaking software developers:\n' +
+            '- "coding agent(s)" / "AI coding agent(s)" -> "agente(s) de código" or "agente(s) de código de IA" (never "agente(s) de codificación").\n' +
+            '- Keep standard developer terms in English as they are widely used in the industry: "APIs", "endpoints", "dashboard", "tokens", "headers", "webhooks", "boilerplate", "payloads", "runtime", "tooling", "issue", "branch", "repo", "setup".\n' +
+            '- "Announcing" in titles/headers -> "Presentamos" or "Lanzamiento de" (avoid gerunds like "Anunciando").\n' +
+            '- "prompt(s)" -> "prompt(s)" or "instrucciones".\n' +
+            '- "feature(s)" -> "funcionalidad(es)" or "features".\n' +
+            '- Avoid overly literal or bureaucratic translations. The tone should be engaging, professional, and written by an experienced software developer.\n\n' +
+            'Retain all markdown formatting, headings, code blocks, math equations ($$...$$), images, spacing, and metadata exactly as they are. Translate ONLY the text content. Do not add any conversational text or markdown code fence wrappers (do not wrap the output in ```markdown).'
         },
         {
           role: 'user',

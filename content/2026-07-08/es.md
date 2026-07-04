@@ -1,37 +1,37 @@
-# Anunciando el Servidor del Protocolo de Contexto del Modelo (MCP) de Orbitali: Construye Agentes de Voz Directamente desde Tu IDE
+# Presentamos el servidor Model Context Protocol (MCP) de Orbitali: construye agentes de voz directamente desde tu IDE
 
-![Anunciando el Servidor del Protocolo de Contexto del Modelo (MCP) de Orbitali: Construye Agentes de Voz Directamente desde Tu IDE](header.png)
+![Presentamos el servidor Model Context Protocol (MCP) de Orbitali: construye agentes de voz directamente desde tu IDE](header.png)
 
-Deja de escribir llamadas REST repetitivas. Ahora tus agentes de codificación AI pueden crear, modificar y gestionar dinámicamente agentes de voz de Orbitali durante tu flujo de trabajo de desarrollo.
+Olvídate del código boilerplate para llamadas REST. Ahora tus agentes de código de IA pueden crear, modificar y gestionar dinámicamente agentes de voz de Orbitali durante tu flujo de desarrollo.
 
-En los últimos meses, la forma en que los desarrolladores construyen software ha cambiado fundamentalmente. Ya no estamos escribiendo código en aislamiento; estamos programando en pareja con asistentes AI como Claude Code, Cursor y Windsurf. Estos asistentes no solo sugieren líneas de autocompletado: leen bases de código, buscan documentación, ejecutan comandos de shell y construyen características completas desde cero.
+En los últimos meses, la forma en que los desarrolladores construyen software ha cambiado fundamentalmente. Ya no escribimos código en solitario; hacemos pair programming con asistentes de IA como Claude Code, Cursor y Windsurf. Estos asistentes no solo sugieren autocompletados; leen bases de código, buscan documentación, ejecutan comandos en la terminal y desarrollan funcionalidades completas desde cero.
 
-Sin embargo, un punto importante de fricción permanecía: conectar estos asistentes de codificación a servicios externos. Si querías que tu compañero de codificación AI configurara o probara un servicio externo como **Orbitali**, tenía que pedirte que hicieras clic en un panel web o que copiaras y pegaras comandos curl de API de la documentación.
+Sin embargo, existía un punto importante de fricción: conectar estos asistentes de código a servicios externos. Si querías que tu compañero de IA configurara o probara un servicio externo como **Orbitali**, tenía que pedirte que navegaras por el dashboard web o copiaras y pegaras comandos curl desde la documentación de la API.
 
-Hoy, estamos eliminando esa barrera. Nos complace anunciar el lanzamiento del **Servidor del Protocolo de Contexto del Modelo (MCP) de Orbitali**, una herramienta de código abierto que permite a tus asistentes de codificación AI interactuar directamente con la infraestructura de voz en tiempo real de Orbitali.
+Hoy eliminamos esa barrera. Nos complace presentar el **servidor de Model Context Protocol (MCP) de Orbitali**, una herramienta de código abierto que permite a tus asistentes de código de IA interactuar directamente con nuestra infraestructura de voz en tiempo real.
 
 ---
 
 ## ¿Qué es MCP?
 
-Desarrollado por Anthropic, el **Protocolo de Contexto del Modelo (MCP)** es un estándar abierto que permite a los modelos de AI conectarse de manera segura a fuentes de datos y herramientas externas. Piénsalo como un puerto USB-C para AI: una vez que un servicio implementa un servidor MCP, cualquier cliente AI compatible (como Claude Code o Cursor) puede entender e interactuar de inmediato con sus herramientas, API y recursos.
+Creado por Anthropic, el **Model Context Protocol (MCP)** es un estándar abierto que permite a los modelos de IA conectarse de manera segura a herramientas y fuentes de datos externas. Piénsalo como un puerto USB-C para la IA: una vez que un servicio implementa un servidor MCP, cualquier cliente compatible (como Claude Code o Cursor) puede entender e interactuar de inmediato con sus herramientas, APIs y recursos.
 
-Al lanzar nuestro propio servidor MCP, estamos dando a tus agentes de codificación locales un conjunto de "manos" para construir, modificar y probar recepcionistas de voz de Orbitali directamente dentro de tu espacio de trabajo de desarrollo.
+Con el lanzamiento de nuestro servidor MCP, damos a tus agentes de código locales un conjunto de "manos" para crear, modificar y probar asistentes de voz de Orbitali directamente desde tu entorno de desarrollo.
 
 ---
 
-## Cómo Funciona: La Arquitectura
+## Cómo funciona: la arquitectura
 
-El servidor MCP de Orbitali se ejecuta localmente en tu máquina. Se lanza por tu agente de codificación a través de la entrada/salida estándar (`stdio`) y se comunica de manera segura con la puerta de enlace API pública de Orbitali (`/public/v1`) utilizando tu clave API.
+El servidor MCP de Orbitali se ejecuta localmente en tu máquina. Tu agente de código lo inicia a través de la entrada/salida estándar (`stdio`) para comunicarse de forma segura con la API pública de Orbitali (`/public/v1`) utilizando tu API key.
 
 ```
 ┌────────────────────────┐           stdio (Local)           ┌────────────────────────┐
-│   TU AGENTE DE CODIFICACIÓN    │ ────────────────────────────────> │  SERVIDOR MCP DE ORBITALI   │
-│  - Claude / Cursor     │ <──────────────────────────────── │  - Tiempo de ejecución local  │
+│   TU AGENTE DE CÓDIGO  │ ────────────────────────────────> │  SERVIDOR MCP DE ORBITALI   │
+│  - Claude / Cursor     │ <──────────────────────────────── │  - Runtime local (Node/Bun) │
 └────────────────────────┘                                   └───────────┬────────────┘
                                                                          │
-                                                             HTTPS       │  Solicitud API
-                                                             (Segura)    │  con clave API
+                                                             HTTPS       │  Petición API
+                                                             (Segura)    │  con API Key
                                                                          ▼
                                                              ┌─────────────────────────┐
                                                              │  API PÚBLICA DE ORBITALI    │
@@ -39,46 +39,46 @@ El servidor MCP de Orbitali se ejecuta localmente en tu máquina. Se lanza por t
                                                              └─────────────────────────┘
 ```
 
-En lugar de requerir que tu agente escriba llamadas REST en bruto, analice esquemas de carga útil y maneje la autenticación manualmente, el servidor MCP expone **herramientas seguras para el flujo de trabajo**. El agente simplemente llama a funciones de alto nivel, y el servidor MCP las traduce en interacciones API correctas.
+En lugar de obligar a tu agente a escribir peticiones REST desde cero, estructurar payloads o gestionar la autenticación de forma manual, el servidor MCP expone **herramientas optimizadas y seguras**. El agente simplemente llama a funciones de alto nivel y el servidor MCP las traduce en peticiones de API correctas.
 
 ---
 
-## Capacidades y Herramientas Clave
+## Herramientas y capacidades clave
 
 El servidor MCP expone un rico conjunto de herramientas para gestionar tu infraestructura de voz:
 
-### 1. Gestión del Ciclo de Vida del Agente de Voz
-* **`list_agents`**: Recupera todos los agentes de voz en tu cuenta, incluyendo sus mensajes, modelos de voz y configuraciones de webhook.
-* **`get_or_create_agent`**: Recupera un agente existente por nombre o crea uno nuevo sobre la marcha.
-* **`patch_agent`**: Actualiza programáticamente parámetros del agente como el mensaje del sistema, idioma, modelo de voz (por ejemplo, configuraciones de voz a voz), temperatura y latencia de respuesta.
+### 1. Gestión del ciclo de vida de los agentes de voz
+* **`list_agents`**: Obtiene todos los agentes de voz de tu cuenta, con sus instrucciones (prompts), modelos de voz y webhooks.
+* **`get_or_create_agent`**: Obtiene un agente existente por nombre o crea uno nuevo al instante.
+* **`patch_agent`**: Modifica de forma programática parámetros como el prompt del sistema, el idioma, el modelo de voz (por ejemplo, configuración de speech-to-speech), la temperatura y la latencia.
 
-### 2. Vinculación de Herramientas Personalizadas a Agentes de Voz
+### 2. Integración de herramientas personalizadas
 * **`list_agent_tools`**: Lista las funciones que el agente de voz puede llamar durante una llamada telefónica.
-* **`ensure_agent_tools`**: Permite al agente de codificación vincular nuevas herramientas (como webhooks de reservas o búsquedas en bases de datos) al recepcionista de voz, asegurando que el agente de voz tenga el esquema API correcto para obtener datos del mundo real durante la conversación.
+* **`ensure_agent_tools`**: Permite al agente de código asociar nuevas herramientas (como webhooks de reserva o consultas a bases de datos) al asistente de voz. Esto asegura que el agente de voz tenga el esquema de API correcto para interactuar con datos en tiempo real durante la llamada.
 
-### 3. Gestión de RAG de Base de Conocimiento
-* **`list_knowledge_documents`**: Consulta documentos adjuntos al agente.
-* **`upload_knowledge_document`**: Sube archivos `.txt`, `.md` o `.pdf` a la base de conocimiento del agente, dándole contexto instantáneo (como catálogos de productos o políticas de la empresa) para referenciar durante las llamadas.
-* **`delete_knowledge_document`**: Elimina documentos obsoletos de la memoria del agente.
+### 3. Gestión de base de conocimiento (RAG)
+* **`list_knowledge_documents`**: Lista los documentos adjuntos al agente.
+* **`upload_knowledge_document`**: Sube archivos `.txt`, `.md` o `.pdf` a la base de conocimiento del agente, proporcionándole contexto inmediato (como catálogos o políticas internas) para consultar durante la conversación.
+* **`delete_knowledge_document`**: Elimina archivos obsoletos de la memoria del agente.
 
-### 4. Pruebas de Sesión en Tiempo Real Directas
-* **`create_realtime_session`**: Genera credenciales WebRTC efímeras para que puedas iniciar una sesión de voz de baja latencia de inmediato y probar el modelo de voz a voz del agente localmente.
+### 4. Pruebas de sesión en tiempo real
+* **`create_realtime_session`**: Genera credenciales WebRTC temporales para iniciar una sesión de voz de baja latencia al instante y probar el modelo de speech-to-speech directamente.
 
 ---
 
-## Comenzando en 60 Segundos
+## Configuración en 60 segundos
 
-El servidor se distribuye a través de npm y se ejecuta utilizando Node o Bun. Para configurarlo con tu asistente de codificación favorito, necesitarás una clave API de Orbitali (disponible en el panel de Orbitali bajo **Configuración → Claves API**).
+El servidor se distribuye a través de npm y funciona con Node o Bun. Para añadirlo a tu asistente de código preferido, necesitarás una clave de API de Orbitali (disponible en el dashboard en **Settings → API keys**).
 
 ### Con Claude Code
-Ejecuta el siguiente comando para instalar y registrar automáticamente el servidor:
+Ejecuta este comando para instalar y registrar el servidor de forma automática:
 
 ```bash
 claude mcp add orbitali --env ORBITALI_API_KEY=sk_your_key -- bunx @orbitali/mcp
 ```
 
 ### Con Cursor o Windsurf
-Agrega la configuración directamente al archivo `.cursor/mcp.json` o `.windsurf/mcp.json` de tu proyecto:
+Añade la configuración a `.cursor/mcp.json` o `.windsurf/mcp.json` en tu proyecto:
 
 ```json
 {
@@ -97,32 +97,32 @@ Agrega la configuración directamente al archivo `.cursor/mcp.json` o `.windsurf
 
 ---
 
-## Un Recorrido en el Mundo Real
+## Un caso de uso real
 
-Veamos cómo esto cambia tu flujo de trabajo diario. Imagina que estás construyendo un sistema de reservas para dentistas. Has escrito un servidor local de Express para manejar las reservas.
+Veamos cómo cambia tu día a día. Imagina que estás desarrollando un sistema de reservas para una clínica dental y has escrito un servidor local con Express.
 
-Con el servidor MCP de Orbitali habilitado, puedes escribir un solo mensaje a tu asistente de codificación:
+Con el servidor MCP de Orbitali activo, solo tienes que pedirle a tu asistente de código:
 
-> "Crea un recepcionista de voz llamado 'Bot de Recepción Dental' que ayude a los pacientes a reservar citas. Vincúlalo a mi punto de entrada POST local en `https://b832-72-10.ngrok-free.app/api/bookings`, y sube `clinic_hours.md` para contexto. Finalmente, dame un comando para probarlo."
+> "Crea un asistente de voz llamado 'Bot Dental' que ayude a los pacientes a reservar citas. Conéctalo a mi endpoint POST local en `https://b832-72-10.ngrok-free.app/api/bookings` y sube `clinic_hours.md` como contexto. Al terminar, dame un comando para probarlo."
 
-Tu agente de codificación ejecutará autónomamente lo siguiente:
-1. Analizará la estructura de tu API local y leerá `clinic_hours.md`.
-2. Ejecutará **`get_or_create_agent`** para registrar `Bot de Recepción Dental` con los ajustes de voz.
-3. Ejecutará **`upload_knowledge_document`** para adjuntar `clinic_hours.md` a la memoria del agente.
-4. Ejecutará **`ensure_agent_tools`** para registrar la herramienta de reservas con el esquema JSON correcto, apuntando a tu túnel ngrok.
+Tu agente de código realizará los siguientes pasos de forma autónoma:
+1. Analizará el código de tu API local y leerá `clinic_hours.md`.
+2. Llamará a **`get_or_create_agent`** para registrar el bot con la configuración de voz adecuada.
+3. Ejecutará **`upload_knowledge_document`** para añadir `clinic_hours.md` a la base de conocimiento.
+4. Usará **`ensure_agent_tools`** para registrar la función de reservas con su esquema JSON, apuntando al túnel de ngrok.
 5. Ejecutará **`create_realtime_session`** para obtener un token WebRTC y generar un enlace de prueba.
 
-En segundos, el agente devuelve:
-> *"He creado el agente de voz, subido las horas y vinculado la herramienta de reservas. Puedes probar tu agente ejecutando este script de cliente WebRTC o navegando a la consola de pruebas de Orbitali."*
+En cuestión de segundos, tu agente te responderá:
+> *"He creado el agente de voz, subido los horarios y configurado la herramienta de reservas. Puedes probarlo ejecutando este script de cliente WebRTC o abriendo la consola de pruebas de Orbitali."*
 
-No tuviste que escribir una sola solicitud API, formatear una carga útil JSON o dejar tu terminal.
+No habrás tenido que escribir una sola petición de API, estructurar JSONs a mano ni salir de la terminal.
 
 ---
 
-## Código Abierto y Extensible
+## Código abierto y extensible
 
-Creemos que las herramientas para desarrolladores deben ser abiertas y transparentes. El servidor MCP de Orbitali es completamente de código abierto y está alojado en GitHub. Si deseas revisar el código fuente, informar un problema o agregar herramientas personalizadas, visita el repositorio:
+Creemos que las herramientas para desarrolladores deben ser abiertas y transparentes. Por eso, el servidor MCP de Orbitali es completamente open-source. Si quieres revisar el código, reportar un issue o añadir integraciones personalizadas, visita nuestro repositorio:
 
 👉 **[github.com/orbitaliai/mcp](https://github.com/orbitaliai/mcp)**
 
-¡No podemos esperar a ver las aplicaciones de voz que construyas con Orbitali y MCP! Comienza hoy y deja que tu asistente de codificación haga el trabajo pesado.
+¡Estamos deseando ver qué aplicaciones de voz construyes con Orbitali y MCP! Pruébalo hoy mismo y deja que tu asistente de código haga el trabajo pesado.
