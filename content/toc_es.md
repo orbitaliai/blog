@@ -1,8 +1,8 @@
 # Tabla de Contenidos
 
-## [La línea telefónica sin fricción: Por qué la simplicidad es la funcionalidad definitiva para los agentes de voz de IA](2026-07-15)
-![La línea telefónica sin fricción: Por qué la simplicidad es la funcionalidad definitiva para los agentes de voz de IA](2026-07-15/header.png)
-Al construir agentes de voz de IA, nos obsesionamos con las respuestas del LLM, la baja latencia y la orquestación de herramientas. Pero hay un obstáculo mucho más simple que a menudo frena el desarrollo: hacer que un número de teléfono real suene.
+## [Presentamos la Línea Telefónica Sin Fricción: Por Qué la Simplicidad es la Funcionalidad Definitiva para Agentes de Voz de IA](2026-07-15)
+![Presentamos la Línea Telefónica Sin Fricción: Por Qué la Simplicidad es la Funcionalidad Definitiva para Agentes de Voz de IA](2026-07-15/header.png)
+Al construir recepcionistas de voz de IA, nos obsesionamos con las respuestas de LLM, la baja latencia y la orquestación de herramientas. Pero hay un obstáculo más simple que a menudo frena el impulso: hacer que un número de teléfono real suene.
 
 ## [Presentamos el servidor Model Context Protocol (MCP) de Orbitali: construye agentes de voz directamente desde tu IDE](2026-07-04)
 ![Presentamos el servidor Model Context Protocol (MCP) de Orbitali: construye agentes de voz directamente desde tu IDE](2026-07-04/header.png)
