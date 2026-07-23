@@ -1,5 +1,9 @@
 # Tabla de Contenidos
 
+## [Tú controlas la lógica, Orbitali ejecuta el agente: Cómo construir agentes webhook seguros](2026-07-23)
+![Tú controlas la lógica, Orbitali ejecuta el agente: Cómo construir agentes webhook seguros](2026-07-23/header.png)
+Al integrar IA de voz en software empresarial, los desarrolladores se enfrentan a una decisión arquitectónica crítica: ¿Dónde viven los datos del cliente? Descubre cómo diseñar agentes de voz que mantengan todos los registros de los clientes seguros en tu propio backend.
+
 ## [Presentamos la Línea Telefónica Sin Fricción: Por Qué la Simplicidad es la Funcionalidad Definitiva para Agentes de Voz de IA](2026-07-15)
 ![Presentamos la Línea Telefónica Sin Fricción: Por Qué la Simplicidad es la Funcionalidad Definitiva para Agentes de Voz de IA](2026-07-15/header.png)
 Al construir recepcionistas de voz de IA, nos obsesionamos con las respuestas de LLM, la baja latencia y la orquestación de herramientas. Pero hay un obstáculo más simple que a menudo frena el impulso: hacer que un número de teléfono real suene.

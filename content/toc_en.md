@@ -1,5 +1,9 @@
 # Table of Contents
 
+## [You Own the Logic, Orbitali Runs the Agent: How to Build Secure Webhook Agents](2026-07-23)
+![You Own the Logic, Orbitali Runs the Agent: How to Build Secure Webhook Agents](2026-07-23/header.png)
+When integrating voice AI into enterprise software, developers face a critical architectural decision: Where does the customer data live? Discover how to design voice agents that keep all customer records secure on your own backend.
+
 ## [The Zero-Friction Phone Line: Why Simplicity is the Ultimate Feature for AI Voice Agents](2026-07-15)
 ![The Zero-Friction Phone Line: Why Simplicity is the Ultimate Feature for AI Voice Agents](2026-07-15/header.png)
 When building AI voice receptionists, we obsess over LLM responses, low latency, and tool orchestration. But there's a simpler hurdle that often kills momentum: getting a real phone number to ring.
