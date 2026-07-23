@@ -5,16 +5,14 @@ This repository hosts the blog content and client fetching library for the [Orbi
 ## Repository Structure
 
 ```
-├── .github/workflows/
-│   └── sync-blog.yml      # GitHub Action to translate posts and sync the TOC
 ├── blog-client/           # TypeScript client library for landing page integrations
 ├── content/               # Blog posts folder
 │   ├── YYYY-MM-DD/        # Individual post directories grouped by publishing dates
 │   │   ├── en.md          # Original English blog post
-│   │   ├── es.md          # Translated Spanish blog post (auto-generated)
+│   │   ├── es.md          # Translated Spanish blog post
 │   │   └── header.png     # Header image for the blog post
-│   ├── toc_en.md          # English Table of Contents (auto-generated)
-│   └── toc_es.md          # Spanish Table of Contents (auto-generated)
+│   ├── toc_en.md          # English Table of Contents
+│   └── toc_es.md          # Spanish Table of Contents
 └── scripts/
     └── sync-blog.mjs      # Translation and TOC synchronization script
 ```
@@ -26,14 +24,11 @@ To publish a new blog post:
 1. Create a date directory under `content/` (e.g., `content/2026-06-30/`).
 2. Add your English post as `en.md` starting with a `# Title` header on the first line.
 3. Save your header image in the same directory as `header.png`.
-4. Commit and push your changes to the `main` branch.
 
-### 2. Auto-Translation & TOC Synchronization (GitHub Action)
-On every push to `main` containing content changes:
-- A GitHub Action checks if the Spanish translation (`es.md`) is missing or if `en.md` was modified in the commit.
-- If so, it calls OpenAI (`gpt-4o-mini`) using the `OPENAI_API_KEY` repository secret to automatically translate the post to Spanish, maintaining all markdown tags, code snippets, and math styling.
-- It then extracts the metadata (title, header image, and a first-paragraph brief) for all posts and regenerates the English and Spanish Table of Contents files (`toc_en.md` and `toc_es.md`) sorted descending by date.
-- The changes are automatically committed and pushed back to the branch with a `[skip ci]` flag.
+### 2. Translation & TOC Synchronization
+Content management, translations, and Table of Contents (TOC) updates are handled directly in the workspace prior to committing:
+- The AI coding agent (Antigravity) is responsible for generating/updating the Spanish translation (`es.md`) and updating both Table of Contents files (`toc_en.md` and `toc_es.md`).
+- This ensures all translation and metadata extraction occur inside the workspace before changes are pushed to `main`.
 
 ---
 
