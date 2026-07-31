@@ -6,7 +6,7 @@ For local businesses, dental and medical clinics, boutique hotels, and home serv
 
 Yet, day in and day out, thousands of these critical interactions end in silence. 
 
-A receptionist is helping an in-person customer; the phone rings, goes to voicemail, and the caller hangs up. Or it is 7:00 PM on a Tuesday, the office is closed, and an urgent prospective customer gets a robotic automated menu ("*Press 1 for hours, Press 2 to leave a message...*") and promptly clicks end.
+A receptionist is helping an in-person customer; the phone rings, goes to voicemail, and the caller hangs up. Or it is 7:00 PM on a Tuesday, the office is closed, and an urgent prospective customer gets a robotic automated menu ("*Press 1 for hours, Press 2 to leave a message...*") and promptly hangs up.
 
 In today's hyper-convenient economy, a missed call is almost always a missed customer. Traditional automated menus lead to frustration and high hang-up rates, while hiring 24/7 human coverage is financially out of reach for most businesses. 
 
