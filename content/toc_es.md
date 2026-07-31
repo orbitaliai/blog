@@ -1,5 +1,9 @@
 # Tabla de Contenidos
 
+## [El costo de una llamada perdida: Por qué la IA de voz es la nueva recepción](2026-08-01)
+![El costo de una llamada perdida: Por qué la IA de voz es la nueva recepción](2026-08-01/header.png)
+En la economía hiperconveniente de hoy, una llamada perdida es casi siempre un cliente perdido. Los menús automatizados tradicionales causan el abandono de llamadas, y los recepcionistas en vivo son costosos y no trabajan 24/7. Descubre cómo la IA de voz cierra esta brecha, protegiendo tus ingresos y liberando a tu personal humano.
+
 ## [Tú controlas la lógica, Orbitali ejecuta el agente: Cómo construir agentes webhook seguros](2026-07-23)
 ![Tú controlas la lógica, Orbitali ejecuta el agente: Cómo construir agentes webhook seguros](2026-07-23/header.png)
 Al integrar IA de voz en software empresarial, los desarrolladores se enfrentan a una decisión arquitectónica crítica: ¿Dónde viven los datos del cliente? Descubre cómo diseñar agentes de voz que mantengan todos los registros de los clientes seguros en tu propio backend.
