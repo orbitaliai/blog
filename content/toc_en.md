@@ -1,5 +1,9 @@
 # Table of Contents
 
+## [The Cost of a Missed Call: Why Voice AI is the New Front Desk](2026-08-01)
+![The Cost of a Missed Call: Why Voice AI is the New Front Desk](2026-08-01/header.png)
+In today's hyper-convenient economy, a missed call is almost always a missed customer. Traditional automated menus lead to hung-up calls. Live receptionists are expensive and can't work 24/7. Discover how Voice AI bridges this gap, saving revenue and freeing up human staff.
+
 ## [You Own the Logic, Orbitali Runs the Agent: How to Build Secure Webhook Agents](2026-07-23)
 ![You Own the Logic, Orbitali Runs the Agent: How to Build Secure Webhook Agents](2026-07-23/header.png)
 When integrating voice AI into enterprise software, developers face a critical architectural decision: Where does the customer data live? Discover how to design voice agents that keep all customer records secure on your own backend.
