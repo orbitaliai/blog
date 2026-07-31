@@ -24,10 +24,10 @@ Veamos un escenario realista para una clínica dental mediana o un servicio de p
 
 * **Llamadas entrantes promedio por día**: 50
 * **Tasa promedio de llamadas perdidas/no contestadas**: 20% (10 llamadas por día)
-* **La tasa de "colgado"**: Los estudios muestran que el **67%** de las personas que llaman colgarán en lugar de dejar un mensaje si se topan con una grabadora. Muchos simplemente buscarán al siguiente competidor en Google.
+* **La tasa de "colgado"**: Los estudios compilados por proveedores de telecomunicaciones y recepción en vivo muestran que el **67%** de las personas que llaman colgarán en lugar de dejar un mensaje si se topan con una grabadora. Muchos simplemente buscarán al siguiente competidor en Google.
   * *10 llamadas perdidas × 67% = 6.7 clientes potenciales perdidos por día.*
 * **Tasa de conversión**: Supongamos que solo el **30%** de esas personas habrían reservado un servicio o una cita si hubieran hablado con un agente en vivo.
-  * *6.7 prospectos × 30% = 2 citas reservadas perdidas por día.*
+  * *6.7 prospectos × 30% = 2.01 (redondeado a 2) citas reservadas perdidas por día.*
 * **Valor promedio del cliente**: Asumamos un valor de vida del cliente (LTV) o valor de trabajo inmediato conservador de **$500**.
   * *2 reservas perdidas × $500 = $1,000 en ingresos perdidos por día.*
 
@@ -54,7 +54,7 @@ La IA de voz no es un motor robótico de texto a voz que lee un guion. Los asist
 Así es como un recepcionista de IA de voz gestiona su recepción las 24 horas del día, los 7 días de la semana, los 365 días del año:
 
 ### 1. Calificación instantánea de clientes potenciales
-En lugar de obligar a las personas a completar un formulario web y esperar, el asistente de voz califica al cliente potencial en el momento. Puede hacer preguntas específicas, evaluar el presupuesto o las necesidades médicas, recopilar detalles de contacto y determinar si la persona coincide con su perfil de cliente ideal.
+En lugar de obligar a las personas a completar un formulario web y esperar, el asistente de voz califica al cliente potencial en el momento. Puede hacer preguntas específicas, recopilar detalles de contacto, verificar la disponibilidad general y determinar si la persona coincide con su perfil de cliente ideal (enfocándose estrictamente en la recopilación de datos no clínicos).
 
 ### 2. Programación de calendario en vivo
 Dado que la IA de voz puede conectarse directamente a su software de programación (como Jane App, Calendly, Acuity o CRM personalizados), puede buscar espacios disponibles y reservar citas en tiempo real.
@@ -64,12 +64,12 @@ Dado que la IA de voz puede conectarse directamente a su software de programaci�
 * *IA de voz:* "Perfecto, ya quedó reservado. Recibirá un mensaje de texto de confirmación en breve."
 
 ### 3. Clasificación inteligente y manejo de preguntas frecuentes
-Más del 50% de las llamadas entrantes a negocios locales son preguntas frecuentes repetitivas: *"¿Dónde están ubicados?"*, *"¿Aceptan mi seguro?"* o *"¿Puedo estacionar cerca?"*
-La IA de voz las responde al instante, liberando a su personal humano de contestar las mismas dudas decenas de veces al día. Si una llamada es compleja o representa una emergencia, la IA puede transferir la llamada sin problemas a un miembro del personal en vivo.
+De acuerdo con datos de la industria sobre llamadas a clínicas y servicios locales, más del 50% de las llamadas entrantes son preguntas frecuentes repetitivas: *"¿Dónde están ubicados?"*, *"¿Aceptan mi seguro?"* o *"¿Puedo estacionar cerca?"*
+La IA de voz las responde al instante, liberando a su personal humano de contestar las mismas dudas decenas de veces al día. Si una persona que llama reporta una emergencia médica o requiere asesoría clínica, el sistema omite de inmediato el flujo automatizado para transferir la llamada a un miembro del personal humano en vivo o le indica marcar al número de emergencias (como el 911), ya que el asistente está diseñado estrictamente para soporte operativo y no realiza evaluaciones clínicas ni proporciona consejos de diagnóstico.
 
 ---
 
-## Coexistence, no reemplazo: Apoyando a su personal
+## Coexistencia, no reemplazo: Apoyando a su personal
 
 Una preocupación común al introducir la IA de voz es que reemplazará a las recepcionistas humanas. En la práctica, ocurre lo contrario: **la IA de voz hace que las recepcionistas vuelvan a amar su trabajo.**
 
@@ -88,4 +88,4 @@ En un mercado competitivo, la capacidad de respuesta es un diferenciador masivo.
 
 Al implementar una recepción de IA de voz, convierte su línea telefónica de un cuello de botella operativo en un motor de crecimiento disponible las 24 horas. Deja de desperdiciar dinero en publicidad para clientes potenciales que no son atendidos, elimina la fricción de los árboles telefónicos tradicionales y le da a su equipo humano el espacio que necesita para concentrarse en lo que más importa.
 
-*¿Está listo para ver cómo la IA de voz puede proteger su recepción? Contáctenos hoy para configurar un agente de voz de demostración personalizado para los flujos de trabajo de su empresa.*
+*¿Está listo para ver cómo la IA de voz puede proteger su recepción? [Contáctenos hoy para configurar un agente de voz de demostración personalizado para los flujos de trabajo de su empresa.](https://orbitali.ai/contact)*

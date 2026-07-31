@@ -24,10 +24,10 @@ Let's look at a realistic scenario for a mid-sized dental clinic or a local plum
 
 * **Average inbound calls per day**: 50
 * **Average missed/unanswered call rate**: 20% (10 calls per day)
-* **The "Hang-Up" Rate**: Studies show that **67%** of callers will hang up rather than leave a voicemail if they reach a machine. Many will simply search for the next competitor on Google.
+* **The "Hang-Up" Rate**: Studies compiled by telecommunications and live receptionist providers show that **67%** of callers will hang up rather than leave a voicemail if they reach a machine. Many will simply search for the next competitor on Google.
   * *10 missed calls × 67% = 6.7 lost leads per day.*
 * **Conversion Rate**: Let’s assume only **30%** of those callers would have booked a service or appointment if they reached a live agent.
-  * *6.7 leads × 30% = 2 booked appointments lost per day.*
+  * *6.7 leads × 30% = 2.01 (rounded to 2) booked appointments lost per day.*
 * **Average Customer Value**: Let’s assume a conservative lifetime value (LTV) or immediate job value of **$500**.
   * *2 lost bookings × $500 = $1,000 in lost revenue per day.*
 
@@ -41,7 +41,7 @@ Even if a business attempts to solve this with a traditional voicemail system, t
 
 We live in an era of instant gratification. We order food in three taps, summon rides in seconds, and receive text updates for every package. Consequently, customer patience has plummeted. 
 
-When a prospective customer calls a local service provider or clinic, they usually have an immediate intent to buy or book. If they get a voicemail greeting, their psychological reaction isn't, *"I will leave a message and wait."* It is, *"This business is slow or unavailable. Let me try the next listing on Google maps."*
+When a prospective customer calls a local service provider or clinic, they usually have an immediate intent to buy or book. If they get a voicemail greeting, their psychological reaction isn't, *"I will leave a message and wait."* It is, *"This business is slow or unavailable. Let me try the next listing on Google Maps."*
 
 Furthermore, legacy interactive voice response (IVR) systems—the dreaded *"Press 1 for scheduling, Press 2 for billing"* menus—often make the problem worse. These rigid structures cause friction. Customers want to speak naturally, state their problem, and get a direct response. If they are forced to navigate a five-layer telephone tree, they hang up.
 
@@ -54,7 +54,7 @@ Voice AI is not a robotic text-to-speech engine reading a script. Today's voice 
 Here is how a Voice AI receptionist manages your front desk 24/7/365:
 
 ### 1. Instant Lead Qualification
-Instead of forcing callers to fill out a website form and wait, the voice assistant qualifies the lead on the spot. It can ask target questions, assess budget or medical needs, gather contact details, and determine if the caller matches your ideal customer profile.
+Instead of forcing callers to fill out a website form and wait, the voice assistant qualifies the lead on the spot. It can ask target questions, gather contact details, check general availability, and determine if the caller matches your ideal customer profile (focusing strictly on non-clinical data collection).
 
 ### 2. Live Calendar Scheduling
 Because voice AI can connect directly to your scheduling software (like Jane App, Calendly, Acuity, or custom CRMs), it can search for open slots and book appointments in real-time. 
@@ -64,8 +64,8 @@ Because voice AI can connect directly to your scheduling software (like Jane App
 * *Voice AI:* "Perfect, I've booked that in. You'll receive a confirmation text shortly."
 
 ### 3. Smart Triage and FAQ Handling
-More than 50% of incoming calls to local businesses are repetitive FAQs: *"Where are you located?"*, *"Do you take my insurance?"*, or *"Can I park nearby?"* 
-Voice AI answers these instantly, freeing up your human staff from answering the same questions dozens of times a day. If a call is complex or represents an emergency, the AI can seamlessly route/triage the call to a live staff member.
+According to industry data on local service and medical clinic calls, more than 50% of incoming inquiries are repetitive FAQs: *"Where are you located?"*, *"Do you take my insurance?"*, or *"Can I park nearby?"* 
+Voice AI answers these instantly, freeing up your human staff from answering the same questions dozens of times a day. If a caller reports a medical emergency or requires clinical advice, the system immediately bypasses the automated flow to route the call to a live human staff member or instructs the caller to dial 911, as the assistant is designed strictly for operational support and does not provide clinical assessment or diagnostic advice.
 
 ---
 
@@ -88,4 +88,4 @@ In a competitive market, responsiveness is a massive differentiator. The busines
 
 By deploying a Voice AI front desk, you turn your phone line from an operational bottleneck into a 24/7 growth engine. You stop wasting marketing dollars on leads that ring out, eliminate the friction of legacy phone trees, and give your human team the space they need to focus on what matters most.
 
-*Ready to see how voice AI can secure your front desk? Contact us today to set up a demo voice agent customized for your business workflows.*
+*Ready to see how voice AI can secure your front desk? [Contact us today to set up a demo voice agent customized for your business workflows.](https://orbitali.ai/contact)*
