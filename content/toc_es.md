@@ -1,5 +1,9 @@
 # Tabla de Contenidos
 
+## [Webhooks seguros para voz: Protegiendo tu backend contra la inyección de prompts verbales](2026-08-10)
+![Webhooks seguros para voz: Protegiendo tu backend contra la inyección de prompts verbales](2026-08-10/header.png)
+A medida que los agentes de voz adquieren la capacidad de llamar a las API y acceder a bases de datos, se convierten en objetivos clave de inyección de prompts verbales. Aprende a proteger tu backend implementando validación de tipos estricta y firmas criptográficas.
+
 ## [El coste de una llamada perdida: Por qué la IA de voz es la nueva recepción](2026-08-01)
 ![El coste de una llamada perdida: Por qué la IA de voz es la nueva recepción](2026-08-01/header.png)
 En la economía hiperconveniente de hoy, una llamada perdida es casi siempre un cliente perdido. Los menús automatizados tradicionales causan el abandono de llamadas, y los recepcionistas en vivo son costosos y no trabajan las 24 horas. Descubre cómo la IA de voz cierra esta brecha, protegiendo tus ingresos y liberando a tu personal humano.

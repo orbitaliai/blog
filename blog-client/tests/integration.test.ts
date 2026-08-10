@@ -40,11 +40,11 @@ describe("Blog Client Fetching Integration", () => {
       fetch: mockFetch
     });
 
-    expect(result).toHaveLength(3);
-    expect(result[2].title).toBe("Introducing Orbitali: Why We Traded the Voice AI Pipeline for a Single Real-Time Model");
-    expect(result[2].slug).toBe("2026-06-30");
-    expect(result[2].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-06-30/header.png");
-    expect(result[2].brief).toBe(
+    expect(result).toHaveLength(6);
+    expect(result[result.length - 1].title).toBe("Introducing Orbitali: Why We Traded the Voice AI Pipeline for a Single Real-Time Model");
+    expect(result[result.length - 1].slug).toBe("2026-06-30");
+    expect(result[result.length - 1].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-06-30/header.png");
+    expect(result[result.length - 1].brief).toBe(
       `Most AI voice receptionists give you a "hello? ... hello?"`
     );
   });
@@ -56,11 +56,11 @@ describe("Blog Client Fetching Integration", () => {
       fetch: mockFetch
     });
 
-    expect(result).toHaveLength(3);
-    expect(result[2].title).toBe("Presentamos Orbitali: Por qué cambiamos el pipeline de IA de voz por un único modelo en tiempo real");
-    expect(result[2].slug).toBe("2026-06-30");
-    expect(result[2].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-06-30/header.png");
-    expect(result[2].brief).toBe(
+    expect(result).toHaveLength(6);
+    expect(result[result.length - 1].title).toBe("Presentamos Orbitali: Por qué cambiamos el pipeline de IA de voz por un único modelo en tiempo real");
+    expect(result[result.length - 1].slug).toBe("2026-06-30");
+    expect(result[result.length - 1].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-06-30/header.png");
+    expect(result[result.length - 1].brief).toBe(
       `La mayoría de los recepcionistas de voz de IA te dan un "¿hola? ... ¿hola?"`
     );
   });

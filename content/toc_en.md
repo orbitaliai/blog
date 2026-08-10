@@ -1,5 +1,9 @@
 # Table of Contents
 
+## [Secure Webhooks for Voice: Shielding Your Backend from Voice Prompt Injection](2026-08-10)
+![Secure Webhooks for Voice: Shielding Your Backend from Voice Prompt Injection](2026-08-10/header.png)
+As voice agents gain the power to call APIs and access databases, they become key targets for verbal prompt injection. Learn how to secure your backend by implementing input sanitization, strict type validation, and request signatures.
+
 ## [The Cost of a Missed Call: Why Voice AI is the New Front Desk](2026-08-01)
 ![The Cost of a Missed Call: Why Voice AI is the New Front Desk](2026-08-01/header.png)
 In today's hyper-convenient economy, a missed call is almost always a missed customer. Traditional automated menus lead to hung-up calls. Live receptionists are expensive and can't work 24/7. Discover how Voice AI bridges this gap, saving revenue and freeing up human staff.
