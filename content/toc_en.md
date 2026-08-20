@@ -1,5 +1,9 @@
 # Table of Contents
 
+## [Designing Conversations: 3 Rules for Creating Voice Assistants That Customers Love to Talk To](2026-08-20)
+![Designing Conversations: 3 Rules for Creating Voice Assistants That Customers Love to Talk To](2026-08-20/header.png)
+Writing instructions for a voice agent is completely different from writing copy for a chat widget. If your voice bot speaks in long paragraphs, callers will get bored or interrupt. Learn the three key rules of voice conversation design.
+
 ## [Secure Webhooks for Voice: Shielding Your Backend from Voice Prompt Injection](2026-08-10)
 ![Secure Webhooks for Voice: Shielding Your Backend from Voice Prompt Injection](2026-08-10/header.png)
 As voice agents gain the power to call APIs and access databases, they become key targets for verbal prompt injection. Learn how to secure your backend by implementing input sanitization, strict type validation, and request signatures.

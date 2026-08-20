@@ -1,8 +1,9 @@
 # Image Generation Guidelines
 
 When generating images (such as blog headers, diagrams, or assets):
-- Always use a light, minimalist, Apple-like rendering style.
-- Use a color palette composed of an off-white/cream background with soft lavender and dusty purple accents.
+- Match the established blog-header style: dark, futuristic technical schematics on a subtle square grid, composed from precise geometric linework, simple outlined icons, connected system-flow diagrams, and waveform motifs. Keep compositions spacious and balanced, with a restrained purple glow and minimal depth.
+- Read the post before designing its image, then build the composition around its specific subject and central idea. Every metaphor, icon, waveform, and system-flow element must help communicate the content being written rather than serve as generic technical decoration.
+- Use the approved Orbitali palette: Ink (`#171419`) as the primary background; Orbitali Purple (`#2D064F`) for the brand glow and focal areas; Orbital Lilac (`#B8A5C2`) and Dust Purple (`#75647F`) for supporting accents; and Porcelain (`#FAF8F6`), White (`#FFFFFF`), or Mist Lilac (`#EEE8F1`) for high-contrast linework and highlights. Use Warm Sand (`#F2EBDD`) only as a restrained alternate accent.
 - Prefer matte and subtle polished finishes, using glass textures sparingly.
 - Never include text on the image.
 

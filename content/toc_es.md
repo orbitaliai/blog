@@ -1,5 +1,9 @@
 # Tabla de Contenidos
 
+## [Diseñando conversaciones: 3 reglas para crear asistentes de voz con los que a los clientes les encante hablar](2026-08-20)
+![Diseñando conversaciones: 3 reglas para crear asistentes de voz con los que a los clientes les encante hablar](2026-08-20/header.png)
+Escribir instrucciones para un agente de voz es completamente diferente a redactar textos para un widget de chat. Si tu bot de voz habla en párrafos largos, los clientes se aburrirán o lo interrumpirán. Conoce las tres reglas clave del diseño de conversaciones por voz.
+
 ## [Webhooks seguros para voz: Protegiendo tu backend contra la inyección de prompts verbales](2026-08-10)
 ![Webhooks seguros para voz: Protegiendo tu backend contra la inyección de prompts verbales](2026-08-10/header.png)
 A medida que los agentes de voz adquieren la capacidad de llamar a las API y acceder a bases de datos, se convierten en objetivos clave de inyección de prompts verbales. Aprende a proteger tu backend implementando validación de tipos estricta y firmas criptográficas.
