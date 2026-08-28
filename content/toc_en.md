@@ -1,5 +1,9 @@
 # Table of Contents
 
+## [Is Your Business Ready for Voice AI? A 4-Step Qualification Checklist](2026-08-28)
+![Is Your Business Ready for Voice AI? A 4-Step Qualification Checklist](2026-08-28/header.png)
+Voice automation is incredibly powerful, but it isn't a magic wand. This post helps business owners determine if their current operations are ready for a voice receptionist by walking through a 4-step qualification checklist.
+
 ## [Designing Conversations: 3 Rules for Creating Voice Assistants That Customers Love to Talk To](2026-08-20)
 ![Designing Conversations: 3 Rules for Creating Voice Assistants That Customers Love to Talk To](2026-08-20/header.png)
 Writing instructions for a voice agent is completely different from writing copy for a chat widget. If your voice bot speaks in long paragraphs, callers will get bored or interrupt. Learn the three key rules of voice conversation design.

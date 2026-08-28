@@ -1,5 +1,9 @@
 # Tabla de Contenidos
 
+## [¿Está su empresa lista para la IA de voz? Una lista de verificación de calificación de 4 pasos](2026-08-28)
+![¿Está su empresa lista para la IA de voz? Una lista de verificación de calificación de 4 pasos](2026-08-28/header.png)
+La automatización de voz es increíblemente potente, pero no es una varita mágica. Este artículo ayuda a los propietarios de empresas a determinar si sus operaciones actuales están listas para un recepcionista de voz mediante una lista de verificación de calificación de 4 pasos.
+
 ## [Diseñando conversaciones: 3 reglas para crear asistentes de voz con los que a los clientes les encante hablar](2026-08-20)
 ![Diseñando conversaciones: 3 reglas para crear asistentes de voz con los que a los clientes les encante hablar](2026-08-20/header.png)
 Escribir instrucciones para un agente de voz es completamente diferente a redactar textos para un widget de chat. Si tu bot de voz habla en párrafos largos, los clientes se aburrirán o lo interrumpirán. Conoce las tres reglas clave del diseño de conversaciones por voz.
