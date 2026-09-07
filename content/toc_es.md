@@ -1,5 +1,9 @@
 # Tabla de Contenidos
 
+## [La anatomía de una interrupción: cómo gestionar la toma de turnos en la IA de voz en tiempo real](2026-09-07)
+![La anatomía de una interrupción: cómo gestionar la toma de turnos en la IA de voz en tiempo real](2026-09-07/header.png)
+El problema más difícil en la IA de voz no es la precisión de la transcripción ni la inteligencia del modelo, sino la toma de turnos humana. Descubre cómo las arquitecturas full-duplex gestionan interrupciones en tiempo real, la retroalimentación verbal pasiva y la fluidez conversacional.
+
 ## [¿Está su empresa lista para la IA de voz? Una lista de verificación de calificación de 4 pasos](2026-08-28)
 ![¿Está su empresa lista para la IA de voz? Una lista de verificación de calificación de 4 pasos](2026-08-28/header.png)
 La automatización de voz es increíblemente potente, pero no es una varita mágica. Este artículo ayuda a los propietarios de empresas a determinar si sus operaciones actuales están listas para un recepcionista de voz mediante una lista de verificación de calificación de 4 pasos.

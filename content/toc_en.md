@@ -1,5 +1,9 @@
 # Table of Contents
 
+## [The Anatomy of an Interruption: How to Handle Turn-Taking in Real-Time Voice AI](2026-09-07)
+![The Anatomy of an Interruption: How to Handle Turn-Taking in Real-Time Voice AI](2026-09-07/header.png)
+The hardest part of voice AI isn't transcription accuracy or model intelligence—it's human turn-taking. Discover how full-duplex speech-to-speech architectures handle real-time interruptions, backchanneling, and conversational flow.
+
 ## [Is Your Business Ready for Voice AI? A 4-Step Qualification Checklist](2026-08-28)
 ![Is Your Business Ready for Voice AI? A 4-Step Qualification Checklist](2026-08-28/header.png)
 Voice automation is incredibly powerful, but it isn't a magic wand. This post helps business owners determine if their current operations are ready for a voice receptionist by walking through a 4-step qualification checklist.
