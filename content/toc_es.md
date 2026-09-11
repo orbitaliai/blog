@@ -1,5 +1,9 @@
 # Tabla de Contenidos
 
+## [Inyección dinámica de contexto: diseñando RAG por voz de ultra-baja latencia](2026-09-11)
+![Inyección dinámica de contexto: diseñando RAG por voz de ultra-baja latencia](2026-09-11/header.png)
+En el chat, una demora de un segundo en una búsqueda vectorial es normal. En voz, una pausa de un segundo parece un silencio incómodo. Descubre cómo diseñar RAG por voz para recepcionistas telefónicos dentro de un presupuesto de 200 ms mediante inyección dinámica de contexto y bases de conocimiento en caché.
+
 ## [La anatomía de una interrupción: cómo gestionar la toma de turnos en la IA de voz en tiempo real](2026-09-07)
 ![La anatomía de una interrupción: cómo gestionar la toma de turnos en la IA de voz en tiempo real](2026-09-07/header.png)
 El problema más difícil en la IA de voz no es la precisión de la transcripción ni la inteligencia del modelo, sino la toma de turnos humana. Descubre cómo las arquitecturas full-duplex gestionan interrupciones en tiempo real, la retroalimentación verbal pasiva y la fluidez conversacional.

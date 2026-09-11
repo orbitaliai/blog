@@ -1,5 +1,9 @@
 # Table of Contents
 
+## [Dynamic Context Injection: Designing Ultra-Low Latency Voice RAG](2026-09-11)
+![Dynamic Context Injection: Designing Ultra-Low Latency Voice RAG](2026-09-11/header.png)
+In chat, a 1-second vector search delay is normal. In voice, a 1-second pause feels like dead air. Discover how to design voice RAG for phone receptionists within a 200ms latency budget using pre-call dynamic context injection and cached knowledge bases.
+
 ## [The Anatomy of an Interruption: How to Handle Turn-Taking in Real-Time Voice AI](2026-09-07)
 ![The Anatomy of an Interruption: How to Handle Turn-Taking in Real-Time Voice AI](2026-09-07/header.png)
 The hardest part of voice AI isn't transcription accuracy or model intelligence—it's human turn-taking. Discover how full-duplex speech-to-speech architectures handle real-time interruptions, backchanneling, and conversational flow.
