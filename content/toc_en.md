@@ -1,5 +1,9 @@
 # Table of Contents
 
+## [The BYOC Advantage: Why You Should Always Own Your Company's Phone Numbers](2026-09-18)
+![The BYOC Advantage: Why You Should Always Own Your Company's Phone Numbers](2026-09-18/header.png)
+Many business software systems lock you into their platform by owning your business numbers or marking up your phone bill. Discover why "Bring Your Own Carrier" (BYOC) is the best practice for companies scaling voice automation with full control and zero telephony markups.
+
 ## [Dynamic Context Injection: Designing Ultra-Low Latency Voice RAG](2026-09-11)
 ![Dynamic Context Injection: Designing Ultra-Low Latency Voice RAG](2026-09-11/header.png)
 In chat, a 1-second vector search delay is normal. In voice, a 1-second pause feels like dead air. Discover how to design voice RAG for phone receptionists within a 200ms latency budget using pre-call dynamic context injection and cached knowledge bases.

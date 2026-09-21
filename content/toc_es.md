@@ -1,5 +1,9 @@
 # Tabla de Contenidos
 
+## [La ventaja de BYOC: Por qué tu empresa siempre debería ser dueña de sus números de teléfono](2026-09-18)
+![La ventaja de BYOC: Por qué tu empresa siempre debería ser dueña de sus números de teléfono](2026-09-18/header.png)
+Muchos sistemas de software empresarial te atan a su plataforma al apropiarse de tus números o inflar tu factura telefónica. Descubre por qué «Bring Your Own Carrier» (BYOC) es la mejor práctica para escalar la automatización de voz con control total y sin recargos de telefonía.
+
 ## [Inyección dinámica de contexto: diseñando RAG por voz de ultra-baja latencia](2026-09-11)
 ![Inyección dinámica de contexto: diseñando RAG por voz de ultra-baja latencia](2026-09-11/header.png)
 En el chat, una demora de un segundo en una búsqueda vectorial es normal. En voz, una pausa de un segundo parece un silencio incómodo. Descubre cómo diseñar RAG por voz para recepcionistas telefónicos dentro de un presupuesto de 200 ms mediante inyección dinámica de contexto y bases de conocimiento en caché.

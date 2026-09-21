@@ -40,10 +40,10 @@ describe("Blog Client Fetching Integration", () => {
       fetch: mockFetch
     });
 
-    expect(result).toHaveLength(10);
-    expect(result[0].title).toBe("Dynamic Context Injection: Designing Ultra-Low Latency Voice RAG");
-    expect(result[0].slug).toBe("2026-09-11");
-    expect(result[0].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-09-11/header.png");
+    expect(result).toHaveLength(11);
+    expect(result[0].title).toBe("The BYOC Advantage: Why You Should Always Own Your Company's Phone Numbers");
+    expect(result[0].slug).toBe("2026-09-18");
+    expect(result[0].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-09-18/header.png");
     expect(result[result.length - 1].title).toBe("Introducing Orbitali: Why We Traded the Voice AI Pipeline for a Single Real-Time Model");
     expect(result[result.length - 1].slug).toBe("2026-06-30");
     expect(result[result.length - 1].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-06-30/header.png");
@@ -59,10 +59,10 @@ describe("Blog Client Fetching Integration", () => {
       fetch: mockFetch
     });
 
-    expect(result).toHaveLength(10);
-    expect(result[0].title).toBe("Inyección dinámica de contexto: diseñando RAG por voz de ultra-baja latencia");
-    expect(result[0].slug).toBe("2026-09-11");
-    expect(result[0].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-09-11/header.png");
+    expect(result).toHaveLength(11);
+    expect(result[0].title).toBe("La ventaja de BYOC: Por qué tu empresa siempre debería ser dueña de sus números de teléfono");
+    expect(result[0].slug).toBe("2026-09-18");
+    expect(result[0].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-09-18/header.png");
     expect(result[result.length - 1].title).toBe("Presentamos Orbitali: Por qué cambiamos el pipeline de IA de voz por un único modelo en tiempo real");
     expect(result[result.length - 1].slug).toBe("2026-06-30");
     expect(result[result.length - 1].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-06-30/header.png");
