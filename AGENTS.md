@@ -10,7 +10,7 @@ When generating images (such as blog headers, diagrams, or assets):
 # Content Management Guidelines
 
 - Do not use automated external pipelines or GitHub Actions for content translations or Table of Contents (TOC) updates.
-- The coding agent is responsible for generating English and Spanish translations (`en.md` and `es.md`) and updating both Tables of Contents (`toc_en.md` and `toc_es.md`) directly in the workspace.
+- The coding agent is responsible for generating English, Spanish, and Italian translations (`en.md`, `es.md`, and `it.md`) and updating all Tables of Contents (`toc_en.md`, `toc_es.md`, and `toc_it.md`) directly in the workspace.
 
 # Technical Documentation
 

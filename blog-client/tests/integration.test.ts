@@ -17,6 +17,12 @@ describe("Blog Client Fetching Integration", () => {
       const text = await file.text();
       return new Response(text, { status: 200 });
     }
+
+    if (urlString.endsWith("content/toc_it.md")) {
+      const file = Bun.file("../content/toc_it.md");
+      const text = await file.text();
+      return new Response(text, { status: 200 });
+    }
     
     if (urlString.endsWith("content/2026-06-30/en.md")) {
       const file = Bun.file("../content/2026-06-30/en.md");
@@ -26,6 +32,12 @@ describe("Blog Client Fetching Integration", () => {
     
     if (urlString.endsWith("content/2026-06-30/es.md")) {
       const file = Bun.file("../content/2026-06-30/es.md");
+      const text = await file.text();
+      return new Response(text, { status: 200 });
+    }
+
+    if (urlString.endsWith("content/2026-06-30/it.md")) {
+      const file = Bun.file("../content/2026-06-30/it.md");
       const text = await file.text();
       return new Response(text, { status: 200 });
     }
@@ -97,5 +109,38 @@ describe("Blog Client Fetching Integration", () => {
     expect(result.content).toContain("La mayoría de los recepcionistas de voz de IA te dan");
     // Check that title has been removed from the content body
     expect(result.content).not.toContain("# Presentamos Orbitali");
+  });
+
+  test("should fetch and parse Italian TOC using mock fetch mapping to actual workspace files", async () => {
+    const result = await fetchTOC("it", {
+      owner: "orbitaliai",
+      repo: "blog",
+      fetch: mockFetch
+    });
+
+    expect(result).toHaveLength(11);
+    expect(result[0].title).toBe("Il vantaggio del BYOC: Perché dovresti sempre possedere i numeri telefonici della tua azienda");
+    expect(result[0].slug).toBe("2026-09-18");
+    expect(result[0].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-09-18/header.png");
+    expect(result[result.length - 1].title).toBe("Presentazione di Orbitali: Perché abbiamo sostituito la pipeline di Voice AI con un singolo modello in tempo reale");
+    expect(result[result.length - 1].slug).toBe("2026-06-30");
+    expect(result[result.length - 1].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-06-30/header.png");
+    expect(result[result.length - 1].brief).toBe(
+      `La maggior parte dei receptionist vocali basati su IA ti lascia con un "pronto? ... pronto?"`
+    );
+  });
+
+  test("should fetch and parse an individual Italian blog post using mock fetch", async () => {
+    const result = await fetchBlogPost("2026-06-30", "it", {
+      owner: "orbitaliai",
+      repo: "blog",
+      fetch: mockFetch
+    });
+
+    expect(result.title).toBe("Presentazione di Orbitali: Perché abbiamo sostituito la pipeline di Voice AI con un singolo modello in tempo reale");
+    expect(result.image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-06-30/header.png");
+    expect(result.content).toContain("La maggior parte dei receptionist vocali basati su IA ti lascia con");
+    // Check that title has been removed from the content body
+    expect(result.content).not.toContain("# Presentazione di Orbitali");
   });
 });

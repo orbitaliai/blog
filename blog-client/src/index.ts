@@ -30,12 +30,12 @@ export function getBaseUrl(config: BlogClientConfig): string {
 /**
  * Fetches the Table of Contents (TOC) for the specified language.
  * 
- * @param lang Language of the TOC to fetch ('en' | 'es')
+ * @param lang Language of the TOC to fetch ('en' | 'es' | 'it')
  * @param config Configuration options
  * @returns Parsed list of TOC entries
  */
 export async function fetchTOC(
-  lang: 'en' | 'es',
+  lang: 'en' | 'es' | 'it',
   config: BlogClientConfig = {}
 ): Promise<TOCEntry[]> {
   const baseUrl = getBaseUrl(config);
@@ -60,13 +60,13 @@ export async function fetchTOC(
  * Fetches a single blog post for the specified slug and language.
  * 
  * @param slug Directory slug of the post (e.g., '2026-06-30')
- * @param lang Language of the post to fetch ('en' | 'es')
+ * @param lang Language of the post to fetch ('en' | 'es' | 'it')
  * @param config Configuration options
  * @returns Parsed blog post details
  */
 export async function fetchBlogPost(
   slug: string,
-  lang: 'en' | 'es',
+  lang: 'en' | 'es' | 'it',
   config: BlogClientConfig = {}
 ): Promise<BlogPost> {
   const baseUrl = getBaseUrl(config);

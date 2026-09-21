@@ -10,9 +10,11 @@ This repository hosts the blog content and client fetching library for the [Orbi
 │   ├── YYYY-MM-DD/        # Individual post directories grouped by publishing dates
 │   │   ├── en.md          # Original English blog post
 │   │   ├── es.md          # Translated Spanish blog post
+│   │   ├── it.md          # Translated Italian blog post
 │   │   └── header.png     # Header image for the blog post
 │   ├── toc_en.md          # English Table of Contents
-│   └── toc_es.md          # Spanish Table of Contents
+│   ├── toc_es.md          # Spanish Table of Contents
+│   └── toc_it.md          # Italian Table of Contents
 └── scripts/
     └── sync-blog.mjs      # Translation and TOC synchronization script
 ```
@@ -27,7 +29,7 @@ To publish a new blog post:
 
 ### 2. Translation & TOC Synchronization
 Content management, translations, and Table of Contents (TOC) updates are handled directly in the workspace prior to committing:
-- The AI coding agent (Antigravity) is responsible for generating/updating the Spanish translation (`es.md`) and updating both Table of Contents files (`toc_en.md` and `toc_es.md`).
+- The AI coding agent (Antigravity) is responsible for generating/updating the Spanish and Italian translations (`es.md` and `it.md`) and updating the Table of Contents files (`toc_en.md`, `toc_es.md`, and `toc_it.md`).
 - This ensures all translation and metadata extraction occur inside the workspace before changes are pushed to `main`.
 
 ---
