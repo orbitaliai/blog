@@ -52,10 +52,10 @@ describe("Blog Client Fetching Integration", () => {
       fetch: mockFetch
     });
 
-    expect(result).toHaveLength(11);
-    expect(result[0].title).toBe("The BYOC Advantage: Why You Should Always Own Your Company's Phone Numbers");
-    expect(result[0].slug).toBe("2026-09-18");
-    expect(result[0].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-09-18/header.png");
+    expect(result).toHaveLength(12);
+    expect(result[0].title).toBe("Orbitali, the Engine Behind Your PBX: How to Offer White-Label AI Switchboards to Your Customers");
+    expect(result[0].slug).toBe("2026-10-16");
+    expect(result[0].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-10-16/header.png");
     expect(result[result.length - 1].title).toBe("Introducing Orbitali: Why We Traded the Voice AI Pipeline for a Single Real-Time Model");
     expect(result[result.length - 1].slug).toBe("2026-06-30");
     expect(result[result.length - 1].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-06-30/header.png");
@@ -71,10 +71,10 @@ describe("Blog Client Fetching Integration", () => {
       fetch: mockFetch
     });
 
-    expect(result).toHaveLength(11);
-    expect(result[0].title).toBe("La ventaja de BYOC: Por qué tu empresa siempre debería ser dueña de sus números de teléfono");
-    expect(result[0].slug).toBe("2026-09-18");
-    expect(result[0].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-09-18/header.png");
+    expect(result).toHaveLength(12);
+    expect(result[0].title).toBe("Orbitali, el motor de tu centralita: Cómo ofrecer centralitas con IA en marca blanca a tus clientes");
+    expect(result[0].slug).toBe("2026-10-16");
+    expect(result[0].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-10-16/header.png");
     expect(result[result.length - 1].title).toBe("Presentamos Orbitali: Por qué cambiamos el pipeline de IA de voz por un único modelo en tiempo real");
     expect(result[result.length - 1].slug).toBe("2026-06-30");
     expect(result[result.length - 1].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-06-30/header.png");
@@ -118,10 +118,10 @@ describe("Blog Client Fetching Integration", () => {
       fetch: mockFetch
     });
 
-    expect(result).toHaveLength(11);
-    expect(result[0].title).toBe("Il vantaggio del BYOC: Perché dovresti sempre possedere i numeri telefonici della tua azienda");
-    expect(result[0].slug).toBe("2026-09-18");
-    expect(result[0].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-09-18/header.png");
+    expect(result).toHaveLength(12);
+    expect(result[0].title).toBe("Orbitali, il motore del tuo centralino: Come offrire centralini IA white-label ai tuoi clienti");
+    expect(result[0].slug).toBe("2026-10-16");
+    expect(result[0].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-10-16/header.png");
     expect(result[result.length - 1].title).toBe("Presentazione di Orbitali: Perché abbiamo sostituito la pipeline di Voice AI con un singolo modello in tempo reale");
     expect(result[result.length - 1].slug).toBe("2026-06-30");
     expect(result[result.length - 1].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-06-30/header.png");

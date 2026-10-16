@@ -1,5 +1,9 @@
 # Tabella dei Contenuti
 
+## [Orbitali, il motore del tuo centralino: Come offrire centralini IA white-label ai tuoi clienti](2026-10-16)
+![Orbitali, il motore del tuo centralino: Come offrire centralini IA white-label ai tuoi clienti](2026-10-16/header.png)
+Se la tua azienda fornisce centralini virtuali, telefonia aziendale o software gestionali, non hai bisogno di sviluppare l'intelligenza artificiale da zero. Scopri come rendere Orbitali il motore white-label del tuo centralino per offrire receptionist virtuali 24/7 con il tuo marchio.
+
 ## [Il vantaggio del BYOC: Perché dovresti sempre possedere i numeri telefonici della tua azienda](2026-09-18)
 ![Il vantaggio del BYOC: Perché dovresti sempre possedere i numeri telefonici della tua azienda](2026-09-18/header.png)
 Molti sistemi di software aziendale ti legano alla propria piattaforma appropriandosi dei tuoi numeri o gonfiando la tua bolletta telefonica. Scopri perché il "Bring Your Own Carrier" (BYOC) è la best practice per le aziende che scalano l'automazione vocale con pieno controllo e zero ricarichi telefonici.

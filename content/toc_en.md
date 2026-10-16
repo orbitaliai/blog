@@ -1,5 +1,9 @@
 # Table of Contents
 
+## [Orbitali, the Engine Behind Your PBX: How to Offer White-Label AI Switchboards to Your Customers](2026-10-16)
+![Orbitali, the Engine Behind Your PBX: How to Offer White-Label AI Switchboards to Your Customers](2026-10-16/header.png)
+If your company provides virtual switchboards, business phone services, or management software, you don't need to build artificial intelligence from scratch. Discover how to make Orbitali the white-label engine behind your switchboard and offer 24/7 AI receptionists under your own brand.
+
 ## [The BYOC Advantage: Why You Should Always Own Your Company's Phone Numbers](2026-09-18)
 ![The BYOC Advantage: Why You Should Always Own Your Company's Phone Numbers](2026-09-18/header.png)
 Many business software systems lock you into their platform by owning your business numbers or marking up your phone bill. Discover why "Bring Your Own Carrier" (BYOC) is the best practice for companies scaling voice automation with full control and zero telephony markups.

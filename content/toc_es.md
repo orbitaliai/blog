@@ -1,5 +1,9 @@
 # Tabla de Contenidos
 
+## [Orbitali, el motor de tu centralita: Cómo ofrecer centralitas con IA en marca blanca a tus clientes](2026-10-16)
+![Orbitali, el motor de tu centralita: Cómo ofrecer centralitas con IA en marca blanca a tus clientes](2026-10-16/header.png)
+Si tu empresa ofrece centralitas virtuales, telefonía para empresas o software de gestión, no necesitas desarrollar inteligencia artificial desde cero. Descubre cómo convertir a Orbitali en el motor en marca blanca de tu centralita para ofrecer recepcionistas virtuales 24/7 bajo tu propia marca.
+
 ## [La ventaja de BYOC: Por qué tu empresa siempre debería ser dueña de sus números de teléfono](2026-09-18)
 ![La ventaja de BYOC: Por qué tu empresa siempre debería ser dueña de sus números de teléfono](2026-09-18/header.png)
 Muchos sistemas de software empresarial te atan a su plataforma al apropiarse de tus números o inflar tu factura telefónica. Descubre por qué «Bring Your Own Carrier» (BYOC) es la mejor práctica para escalar la automatización de voz con control total y sin recargos de telefonía.
