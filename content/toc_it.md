@@ -1,5 +1,9 @@
 # Tabella dei Contenuti
 
+## [Perché gli agenti vocali sono la soluzione ovvia per ristoranti, hotel e attività ad alto contatto — e come Orbitali li mette al lavoro](2026-11-06)
+![Perché gli agenti vocali sono la soluzione ovvia per ristoranti, hotel e attività ad alto contatto — e come Orbitali li mette al lavoro](2026-11-06/header.png)
+Durante il servizio serale al ristorante o nelle ore di punta del check-in in hotel, il telefono squilla proprio mentre il personale assiste gli ospiti presenti in sala. Scopri perché gli agenti vocali IA sono la soluzione naturale per ristoranti, hotel e attività a contatto con il pubblico, e come Orbitali rende semplice crearli e metterli subito al lavoro.
+
 ## [Orbitali, il motore del tuo centralino: Come offrire centralini IA white-label ai tuoi clienti](2026-10-16)
 ![Orbitali, il motore del tuo centralino: Come offrire centralini IA white-label ai tuoi clienti](2026-10-16/header.png)
 Se la tua azienda fornisce centralini virtuali, telefonia aziendale o software gestionali, non hai bisogno di sviluppare l'intelligenza artificiale da zero. Scopri come rendere Orbitali il motore white-label del tuo centralino per offrire receptionist virtuali 24/7 con il tuo marchio.

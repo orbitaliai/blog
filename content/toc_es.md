@@ -1,5 +1,9 @@
 # Tabla de Contenidos
 
+## [Por qué los agentes de voz son la solución evidente para restaurantes, hoteles y negocios de atención presencial — y cómo Orbitali los pone a trabajar](2026-11-06)
+![Por qué los agentes de voz son la solución evidente para restaurantes, hoteles y negocios de atención presencial — y cómo Orbitali los pone a trabajar](2026-11-06/header.png)
+En pleno servicio de cenas o durante la hora punta de llegadas en un hotel, el teléfono suena justo cuando el personal está atendiendo a los clientes en persona. Descubre por qué los agentes de voz con IA son el aliado evidente para restaurantes, hoteles y negocios de cara al público, y cómo Orbitali hace que sea muy sencillo crearlos y ponerlos a trabajar.
+
 ## [Orbitali, el motor de tu centralita: Cómo ofrecer centralitas con IA en marca blanca a tus clientes](2026-10-16)
 ![Orbitali, el motor de tu centralita: Cómo ofrecer centralitas con IA en marca blanca a tus clientes](2026-10-16/header.png)
 Si tu empresa ofrece centralitas virtuales, telefonía para empresas o software de gestión, no necesitas desarrollar inteligencia artificial desde cero. Descubre cómo convertir a Orbitali en el motor en marca blanca de tu centralita para ofrecer recepcionistas virtuales 24/7 bajo tu propia marca.

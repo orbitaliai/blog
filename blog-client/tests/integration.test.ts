@@ -52,10 +52,10 @@ describe("Blog Client Fetching Integration", () => {
       fetch: mockFetch
     });
 
-    expect(result).toHaveLength(12);
-    expect(result[0].title).toBe("Orbitali, the Engine Behind Your PBX: How to Offer White-Label AI Switchboards to Your Customers");
-    expect(result[0].slug).toBe("2026-10-16");
-    expect(result[0].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-10-16/header.png");
+    expect(result).toHaveLength(13);
+    expect(result[0].title).toBe("Why Voice Agents Are the Obvious Solution for Restaurants, Hotels, and High-Touch Businesses—and How Orbitali Puts Them to Work");
+    expect(result[0].slug).toBe("2026-11-06");
+    expect(result[0].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-11-06/header.png");
     expect(result[result.length - 1].title).toBe("Introducing Orbitali: Why We Traded the Voice AI Pipeline for a Single Real-Time Model");
     expect(result[result.length - 1].slug).toBe("2026-06-30");
     expect(result[result.length - 1].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-06-30/header.png");
@@ -71,10 +71,10 @@ describe("Blog Client Fetching Integration", () => {
       fetch: mockFetch
     });
 
-    expect(result).toHaveLength(12);
-    expect(result[0].title).toBe("Orbitali, el motor de tu centralita: Cómo ofrecer centralitas con IA en marca blanca a tus clientes");
-    expect(result[0].slug).toBe("2026-10-16");
-    expect(result[0].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-10-16/header.png");
+    expect(result).toHaveLength(13);
+    expect(result[0].title).toBe("Por qué los agentes de voz son la solución evidente para restaurantes, hoteles y negocios de atención presencial — y cómo Orbitali los pone a trabajar");
+    expect(result[0].slug).toBe("2026-11-06");
+    expect(result[0].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-11-06/header.png");
     expect(result[result.length - 1].title).toBe("Presentamos Orbitali: Por qué cambiamos el pipeline de IA de voz por un único modelo en tiempo real");
     expect(result[result.length - 1].slug).toBe("2026-06-30");
     expect(result[result.length - 1].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-06-30/header.png");
@@ -118,10 +118,10 @@ describe("Blog Client Fetching Integration", () => {
       fetch: mockFetch
     });
 
-    expect(result).toHaveLength(12);
-    expect(result[0].title).toBe("Orbitali, il motore del tuo centralino: Come offrire centralini IA white-label ai tuoi clienti");
-    expect(result[0].slug).toBe("2026-10-16");
-    expect(result[0].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-10-16/header.png");
+    expect(result).toHaveLength(13);
+    expect(result[0].title).toBe("Perché gli agenti vocali sono la soluzione ovvia per ristoranti, hotel e attività ad alto contatto — e come Orbitali li mette al lavoro");
+    expect(result[0].slug).toBe("2026-11-06");
+    expect(result[0].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-11-06/header.png");
     expect(result[result.length - 1].title).toBe("Presentazione di Orbitali: Perché abbiamo sostituito la pipeline di Voice AI con un singolo modello in tempo reale");
     expect(result[result.length - 1].slug).toBe("2026-06-30");
     expect(result[result.length - 1].image).toBe("https://raw.githubusercontent.com/orbitaliai/blog/main/content/2026-06-30/header.png");

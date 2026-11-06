@@ -1,5 +1,9 @@
 # Table of Contents
 
+## [Why Voice Agents Are the Obvious Solution for Restaurants, Hotels, and High-Touch Businesses—and How Orbitali Puts Them to Work](2026-11-06)
+![Why Voice Agents Are the Obvious Solution for Restaurants, Hotels, and High-Touch Businesses—and How Orbitali Puts Them to Work](2026-11-06/header.png)
+During dinner rush or peak hotel check-in, the phone rings at the exact moment your staff are busy helping guests in person. Discover why AI voice agents are the natural solution for restaurants, hotels, and customer-facing businesses—and how Orbitali makes it effortless to create them and put them to work.
+
 ## [Orbitali, the Engine Behind Your PBX: How to Offer White-Label AI Switchboards to Your Customers](2026-10-16)
 ![Orbitali, the Engine Behind Your PBX: How to Offer White-Label AI Switchboards to Your Customers](2026-10-16/header.png)
 If your company provides virtual switchboards, business phone services, or management software, you don't need to build artificial intelligence from scratch. Discover how to make Orbitali the white-label engine behind your switchboard and offer 24/7 AI receptionists under your own brand.
